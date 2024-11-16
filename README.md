@@ -1,7 +1,10 @@
-# demo.py
+# Python3
 Book of Python containing every possible simplified versions of documentations, ranging from the basics, built-ins, packages, and libraries.
 
-![Static Badge](https://img.shields.io/badge/Python_%3E%3D3.12-yellow?style=for-the-badge)
+**--> DISCLAIMER <--**
+This repository is not affiliated with the / an official Python organization or group that maintains the language. This repository only helps out easily navigate and find through the narrowed-down documentations and basics relating to the language.
+
+![Static Badge](https://img.shields.io/badge/Python_%3E%3D3.13-yellow?style=for-the-badge)
 
 ## Data Types
 - **[Immutable Objects](https://github.com/demoutreiii/python3/blob/main/data_types/immutable.md)**
@@ -29,6 +32,8 @@ Book of Python containing every possible simplified versions of documentations, 
     - [List Methods](https://github.com/demoutreiii/python3/blob/main/data_types/list.md#list-methods)
   - [Set](https://github.com/demoutreiii/python3/blob/c33ecd83d97d0b89ae8299fb98ef7b3de16053b9/data_types/set.md)
     - [Set Methods](https://github.com/demoutreiii/python3/blob/main/data_types/set.md#set-methods)
+- [Decorators](https://github.com/demoutreiii/python3/blob/main/data_types/function.md#decorators)
+- [Functions](https://github.com/demoutreiii/python3/blob/main/data_types/function.md)
 
 ## Operations
 
