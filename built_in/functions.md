@@ -218,3 +218,19 @@ The optional ` source ` parameter can be used to initialize the array in a few d
 **Returns**: ` bool `
 
 > Source: [` callable() `](<https://docs.python.org/3/library/functions.html#callable>)
+
+
+### chr()
+Return the string representing a character whose Unicode code point is the integer ` i `. For example, ` chr(97) ` returns the string ` 'a' `, while ` chr(8364) ` returns the string ` '€' `. This is the inverse of [` ord `](<https://docs.python.org/3/library/functions.html#ord>).
+
+The valid range for the argument is from 0 through 1,114,111 (0x10FFFF in base 16). [` ValueError `](<https://docs.python.org/3/library/exceptions.html#ValueError>) will be raised if ` i ` is out of range.
+
+**Parameters**:
+- **i**: ` int `
+
+**Raises**:
+- [**ValueError**](<https://docs.python.org/3/library/exceptions.html#ValueError>) - ` i ` is out of range
+
+**Returns**: ` str `- Unicode code point string representation of the integer ` i `
+
+> Source: [` chr() `](<https://docs.python.org/3/library/functions.html#chr>)
