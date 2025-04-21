@@ -162,7 +162,7 @@ False
 True
 ```
 
-> Source: [` bool() `](<https://docs.python.org/3/library/functions.html#bool>)
+> Source: [` class bool() `](<https://docs.python.org/3/library/functions.html#bool>)
 
 
 ### breakpoint()
@@ -182,3 +182,28 @@ Raises an [auditing event](<https://docs.python.org/3/library/sys.html#auditing>
 - [**RuntimeError**](<https://docs.python.org/3/library/exceptions.html#RuntimeError>) - [` sys.breakpointhook() `](<https://docs.python.org/3/library/sys.html#sys.breakpointhook>) is not accessible.
 
 > Source: [` breakpoint() `](<https://docs.python.org/3/library/functions.html#breakpoint>)
+
+
+### bytearray()
+Return a new array of bytes. The [` bytearray `](<https://docs.python.org/3/library/stdtypes.html#bytearray>) class is a mutable sequence of integers in the range ` 0 <= x < 256 `. It has most of the usual methods of mutable sequences, described in [Mutable Sequence Types](<https://docs.python.org/3/library/stdtypes.html#typesseq-mutable>), as well as most methods that the [` bytes `](<https://docs.python.org/3/library/stdtypes.html#bytes>) type has, see [Bytes and Bytesarray Operations](<https://docs.python.org/3/library/stdtypes.html#bytes-methods>).
+
+The optional ` source ` parameter can be used to initialize the array in a few different ways:
+
+ - If it is a string, you must also give the ` encoding ` (and optionally, ` errors `) parameters; [` bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>) then converts the string to bytes using ` str.encode() `](<https://docs.python.org/3/library/stdtypes.html#str.encode>).
+
+ - If it is an integer, the array will have that size and will be initialized with null bytes.
+
+ - If it is an object conforming to the [buffer interface](<https://docs.python.org/3/c-api/buffer.html#bufferobjects>), a read-only buffer of the object will be used to initialize the bytes array.
+
+ - If it is an iterable, it must be an iterable of integers in the range ` 0 <= x < 256 `, which are used as the initial contents of the array.
+
+ Without an argument, an array of size 0 is created.
+
+ **Parameters**:
+ - **source**: ` Optional[Union[str, int, Object, Iterable]] ` - defaults to an array with size of 0
+ - **encoding**: ` Optional `
+ - **errors**: ` Optional `
+
+ **Returns**: ` bytearray `
+
+ > Source: [` class bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>)
