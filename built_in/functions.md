@@ -103,3 +103,14 @@ False
 ```
 
 > Source: [` any() `](<https://docs.python.org/3/library/functions.html#any>)
+
+
+### ascii()
+As [` repr() `](<https://docs.python.org/3/library/functions.html#repr>), return a string containing a printable representation of an object, but escape the non-ASCII characters in the string returned by the [` repr() `](<https://docs.python.org/3/library/functions.html#repr>).
+
+**Parameters**:
+- **object**: ` Object `
+
+**Returns**: ` str `
+
+> Source: [` ascii() `](<https://docs.python.org/3/library/functions.html#ascii>)
