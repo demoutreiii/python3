@@ -114,3 +114,25 @@ As [` repr() `](<https://docs.python.org/3/library/functions.html#repr>), return
 **Returns**: ` str `
 
 > Source: [` ascii() `](<https://docs.python.org/3/library/functions.html#ascii>)
+
+
+### bin()
+Convert an integer number to a binary string prefixed with "0b". If ` number ` is not a Python [` int `](<https://docs.python.org/3/library/functions.html#int>) object, it has to define an [` __index__() `](<https://docs.python.org/3/reference/datamodel.html#object.__index__>) method that returns an integer.
+
+```py
+>>> bin(3)
+'0b11'
+>>> bin(-10)
+'0b1010'
+```
+
+If the prefix "0b" is desired or not, you can use either of the following ways:
+
+```py
+>>> format(14, "#b"), format(14, "b")
+("0b1110", "1110")
+>>> f"{14:#b}", f"{14:b}"
+("0b1110", "1110")
+```
+
+> Source: [` bin() `](<https://docs.python.org/3/library/functions.html#bin>)
