@@ -119,6 +119,11 @@ As [` repr() `](<https://docs.python.org/3/library/functions.html#repr>), return
 ### bin()
 Convert an integer number to a binary string prefixed with "0b". If ` number ` is not a Python [` int `](<https://docs.python.org/3/library/functions.html#int>) object, it has to define an [` __index__() `](<https://docs.python.org/3/reference/datamodel.html#object.__index__>) method that returns an integer.
 
+**Parameters**:
+- **number**: ` Union[int, Object] `
+
+**Returns**: ` str `
+
 ```py
 >>> bin(3)
 '0b11'
@@ -136,3 +141,25 @@ If the prefix "0b" is desired or not, you can use either of the following ways:
 ```
 
 > Source: [` bin() `](<https://docs.python.org/3/library/functions.html#bin>)
+
+
+### bool()
+Return a Boolean value, i.e. one of ` True ` or ` False `. The argument is converted using the standard [truth testing procedure](<https://docs.python.org/3/library/stdtypes.html#truth>). If the argument is false or omitted, this returns ` False `; otherwise it returns ` True `. The [` bool `](<https://docs.python.org/3/library/functions.html#bool>) class is a subclass of [` int `](<https://docs.python.org/3/library/functions.html#int>). It cannot be subclassed further.
+
+**Parameters**:
+- **object**: ` Optional[bool] `
+
+**Returns**: ` bool ` - defaults to ` False `
+
+```py
+>>> bool(0)
+False
+>>> bool(1)
+True
+>>> bool("")
+False
+>>> bool("python")
+True
+```
+
+> Source: [` bool() `](<https://docs.python.org/3/library/functions.html#bool>)
