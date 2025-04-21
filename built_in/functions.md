@@ -2,7 +2,7 @@
 
 
 ### abs()
-Return the absolute value of an integer, floating-point, or an object implementing ` __abs__() `. If the argument is a complex number, its magnitude is returned.
+Return the absolute value of an integer, floating-point, or an object implementing [` __abs__() `](<https://docs.python.org/3/reference/datamodel.html#object.__abs__>). If the argument is a complex number, its magnitude is returned.
 
 **Parameters**:
 - **x**: ` Union[int, float, Object] ` - variable to get the absolute value of.
@@ -21,7 +21,7 @@ Return the absolute value of an integer, floating-point, or an object implementi
 
 
 ### aiter()
-Return an asynchronous iterator for an asynchronous iterable. Equivalent to calling ` x.__aiter__() `.
+Return an [asynchronous iterator](https://docs.python.org/3/glossary.html#term-asynchronous-iterator) for an [asynchronous iterable](https://docs.python.org/3/glossary.html#term-asynchronous-iterable). Equivalent to calling ` x.__aiter__() `.
 
 **Parameters**:
 - **async_iterable**: ` AsyncIterable ` - asynchronous iterable to return its asynchronous iterator of
@@ -66,13 +66,40 @@ True
 
 
 ### anext()
-When awaited, return the next item from the asynchronous iterator, or ` default ` if given and the iterator is exhausted.
+When awaited, return the next item from the given [asynchronous iterator](https://docs.python.org/3/glossary.html#term-asynchronous-iterator), or ` default ` if given and the iterator is exhausted.
 
-This calls the ` __anext__() ` method of the ` async_iterator `, returning an awaitable. Awaiting this returns the next value of the iterabor. If ` default ` is given, it is returned if the iterator is exhausted, otherwise ` StopAsyncIteration ` is raised.
+This calls the [` __anext__() `](https://docs.python.org/3/reference/datamodel.html#object.__anext__) method of the ` async_iterator `, returning an [awaitable](https://docs.python.org/3/glossary.html#term-awaitable). Awaiting this returns the next value of the iterabor. If ` default ` is given, it is returned if the iterator is exhausted, otherwise [` StopAsyncIteration `](https://docs.python.org/3/library/exceptions.html#StopAsyncIteration) is raised.
 
 **Parameters**:
 - **async_iterator**: ` AsyncIterable ` - asynchronous iterator
 - **default**: ` Optional[Any] ` - default value to return if the iterator is exhausted
 
+**Returns**: ` Any `
+
+**Raises**:
+- **StopAsyncIteration** - iterator is exhausted and ` default ` is not provided
+
 > Added in version 3.10
 > Source: [` awaitable anext() `](<https://docs.python.org/3/library/functions.html#anext>)
+
+
+### any()
+Return ` True ` if any element in the ` iterable ` is true. If the iterable is empty, returns ` False `.
+
+**Parameters**:
+- **iterable**: ` Iterable `
+
+**Returns**: ` bool `
+
+```py
+>>> any([False, False])
+False
+>>> any([True, False])
+True
+>>> any([True, True])
+True
+>>> any([])
+False
+```
+
+> Source: [` any() `](<https://docs.python.org/3/library/functions.html#any>)
