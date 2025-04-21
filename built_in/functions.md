@@ -207,3 +207,14 @@ The optional ` source ` parameter can be used to initialize the array in a few d
  **Returns**: ` bytearray `
 
  > Source: [` class bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>)
+
+
+ ### callable()
+ Return ` True if the ` object ` argument appears callable, ` False ` if not. If this returns ` True `, it is still possible that a call fails, but if it is ` False `, calling ` object ` will never succeed. Note that classes are callable (calling a class returns a new instance); instances are callable if their class has a [` __call__() `](<https://docs.python.org/3/reference/datamodel.html#object.__call__>) method.
+
+ **Parameters**:
+- **object**: ` Object `
+
+**Returns**: ` bool `
+
+> Source: [` callable() `](<https://docs.python.org/3/library/functions.html#callable>)
