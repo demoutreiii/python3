@@ -17,7 +17,7 @@ Return the absolute value of an integer, floating-point, or an object implementi
 >>> abs(number)
 123
 ```
-> Source: [` abs() `](<https://docs.python.org/3/library/functions.html#abs>)
+> Source: [` Built-in Functions | abs() `](<https://docs.python.org/3/library/functions.html#abs>)
 
 
 ### aiter()
@@ -40,7 +40,7 @@ async def sample() -> None:
 ```
 
 > Added in version 3.10
-> Source: [` aiter() `](<https://docs.python.org/3/library/functions.html#aiter>)
+> Source: [` Built-in Functions | aiter() `](<https://docs.python.org/3/library/functions.html#aiter>)
 
 
 ### all()
@@ -62,7 +62,7 @@ True
 True
 ```
 
-> Source: [` all() `](<https://docs.python.org/3/library/functions.html#all>)
+> Source: [` Built-in Functions | all() `](<https://docs.python.org/3/library/functions.html#all>)
 
 
 ### anext()
@@ -80,7 +80,7 @@ This calls the [` __anext__() `](https://docs.python.org/3/reference/datamodel.h
 - **StopAsyncIteration** - iterator is exhausted and ` default ` is not provided
 
 > Added in version 3.10
-> Source: [` awaitable anext() `](<https://docs.python.org/3/library/functions.html#anext>)
+> Source: [` Built-in Functions | anext() `](<https://docs.python.org/3/library/functions.html#anext>)
 
 
 ### any()
@@ -102,7 +102,7 @@ True
 False
 ```
 
-> Source: [` any() `](<https://docs.python.org/3/library/functions.html#any>)
+> Source: [` Built-in Functions | any() `](<https://docs.python.org/3/library/functions.html#any>)
 
 
 ### ascii()
@@ -113,7 +113,7 @@ As [` repr() `](<https://docs.python.org/3/library/functions.html#repr>), return
 
 **Returns**: ` str `
 
-> Source: [` ascii() `](<https://docs.python.org/3/library/functions.html#ascii>)
+> Source: [` Built-in Functions | ascii() `](<https://docs.python.org/3/library/functions.html#ascii>)
 
 
 ### bin()
@@ -140,7 +140,7 @@ If the prefix "0b" is desired or not, you can use either of the following ways:
 ("0b1110", "1110")
 ```
 
-> Source: [` bin() `](<https://docs.python.org/3/library/functions.html#bin>)
+> Source: [` Built-in Functions | bin() `](<https://docs.python.org/3/library/functions.html#bin>)
 
 
 ### bool()
@@ -162,7 +162,7 @@ False
 True
 ```
 
-> Source: [` class bool() `](<https://docs.python.org/3/library/functions.html#bool>)
+> Source: [` Built-in Functions | bool() `](<https://docs.python.org/3/library/functions.html#bool>)
 
 
 ### breakpoint()
@@ -181,7 +181,7 @@ Raises an [auditing event](<https://docs.python.org/3/library/sys.html#auditing>
 **Raises**:
 - [**RuntimeError**](<https://docs.python.org/3/library/exceptions.html#RuntimeError>) - [` sys.breakpointhook() `](<https://docs.python.org/3/library/sys.html#sys.breakpointhook>) is not accessible.
 
-> Source: [` breakpoint() `](<https://docs.python.org/3/library/functions.html#breakpoint>)
+> Source: [` Built-in Functions | breakpoint() `](<https://docs.python.org/3/library/functions.html#breakpoint>)
 
 
 ### bytearray()
@@ -206,7 +206,7 @@ The optional ` source ` parameter can be used to initialize the array in a few d
 
  **Returns**: ` bytearray `
 
- > Source: [` class bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>)
+ > Source: [` Built-in Functions | bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>)
 
 
  ### callable()
@@ -217,7 +217,7 @@ The optional ` source ` parameter can be used to initialize the array in a few d
 
 **Returns**: ` bool `
 
-> Source: [` callable() `](<https://docs.python.org/3/library/functions.html#callable>)
+> Source: [` Built-in Functions | callable() `](<https://docs.python.org/3/library/functions.html#callable>)
 
 
 ### chr()
@@ -233,4 +233,19 @@ The valid range for the argument is from 0 through 1,114,111 (0x10FFFF in base 1
 
 **Returns**: ` str `- Unicode code point string representation of the integer ` i `
 
-> Source: [` chr() `](<https://docs.python.org/3/library/functions.html#chr>)
+> Source: [` Built-in Functions | chr() `](<https://docs.python.org/3/library/functions.html#chr>)
+
+
+### complex()
+Convert a single string or number to a complex number, or create a complex number from real and imaginary parts.
+
+**Parameters**:
+- **real**: ` Union[float, str] `
+- **imag**: ` Union[str] `
+
+**Raises**
+- [**ValueError**](<https://docs.python.org/3/library/exceptions.html#ValueError>) - invalid imaginary parts syntax.
+
+> Source: [` Built-in Functions | complex() `](<https://docs.python.org/3/library/functions.html#complex>)
+
+**Returns**: ` complex `
