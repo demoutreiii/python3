@@ -261,3 +261,14 @@ Delete the named attribute of the object, if it allows it.
 - **name**: ` str ` - name of the attribute.
 
 > Source: [` Built-in Functions | delattr() `](<https://docs.python.org/3/library/functions.html#delattr>)
+
+
+### dict()
+Create a new dictionary.
+
+**Parameters**:
+- **\*\*kwargs** - keyword arguments. Additionally, you may provide a mapping or iterable as well.
+
+**Returns**: ` dict `
+
+> Source: [` Built-in Types | dict() `](<https://docs.python.org/3/library/stdtypes.html#dict>)
