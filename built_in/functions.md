@@ -249,3 +249,15 @@ Convert a single string or number to a complex number, or create a complex numbe
 > Source: [` Built-in Functions | complex() `](<https://docs.python.org/3/library/functions.html#complex>)
 
 **Returns**: ` complex `
+
+
+### delattr()
+Delete the named attribute of the object, if it allows it.
+
+` delattr(x, 'foo') ` is equivalent to ` del x.foo `.
+
+**Parameters**:
+- **object**: ` Object `
+- **name**: ` str ` - name of the attribute.
+
+> Source: [` Built-in Functions | delattr() `](<https://docs.python.org/3/library/functions.html#delattr>)
