@@ -1,0 +1,308 @@
+# Application Commands
+Application commands, such as slash commands and context menu commands, allows you to handle commands better, without the need of the ` message_content ` intent.
+
+
+## Slash Commands
+There are multiple ways to create slash commands:
+
+**1. Using ` @CommandTree.command() ` decorator.**
+Your ` CommandTree ` instance can be found in the ` tree ` property of your bot. If you're using ` discord.Client ` class, you have to assign it yourself:
+```py
+from discord import Client, Intents
+from discord.app_commands import CommandTree
+
+client = Client(intents = Intents.default())
+client.tree = CommandTree(client)
+```
+
+Example:
+```py
+from discord import Interaction
+
+@bot.tree.command()
+async def sample(interaction: Interaction) -> None: ...
+```
+
+**2. Using ` @app_commands.command() ` decorator.**
+This decorator requires you to use ` commands.Bot `.
+
+The decorator can be used inside a ` Cog ` or ` GroupCog `:
+```py
+from discord import app_commands, Interaction
+from discord.ext.commands import Cog, GroupCog
+
+# Inside a Cog:
+class SampleCog(Cog):
+  @app_commands.command()
+  async def sample(self, interaction: Interaction) -> None: ...
+  # /sample
+
+# Inside a GroupCog:
+class SampleGroupCog(GroupCog, name = "test"):
+  @app_commands.command()
+  async def sample(self, interaction: Interaction) -> None: ...
+    # /test sample
+```
+
+If the decorator is created outside a cog, you have to manually add it to the ` CommandTree ` yourself:
+```py
+from discord import app_commands, Interaction
+
+@app_commands.command()
+async def sample(interaction: Interaction) -> None: ...
+
+bot.tree.add_command(sample)
+```
+
+**3. Using ` @Group.command() ` decorator.**
+Similarly to the ` @app_commands.command() ` decorator, this one can be done inside and outside a cog or group cog.
+
+With a cog or group cog:
+```py
+from discord import Interaction
+from discord.app_commands import Group
+from discord.ext.commands import Cog, GroupCog
+
+# Inside a Cog:
+class SampleCog(Cog):
+  sample = Group(name = "sample")
+
+  @sample.command()
+  async def test(self, interaction: Interaction) -> None: ...
+    # /sample test
+
+
+# Inside a GroupCog:
+class SampleGroupCog(GroupCog, name = "sample"):
+  test = Group(name = "test")
+
+  @test.command()
+  async def foo(self, interaction: Interaction) -> None: ...
+    # /sample test foo
+```
+
+When done outside a cog or group cog, you have to add the ` Group ` object, not its commands:
+```py
+from discord import Interaction
+from discord.app_commands import Group
+
+sample = Group(name = "sample")
+
+@sample.command()
+async def test(interaction: Interaction) -> None: ...
+  # /sample test
+
+bot.tree.add_command(sample)
+```
+
+
+### Command Options
+To append options to the command, simply append one or more argument to the function with its correspoding type annotation after the ` Interaction ` argument:
+```py
+from discord import Attachment, GuildChannel, Interaction, Member, User
+
+# String option
+@bot.tree.command()
+async def sample(interaction: Interaction, string: str) -> None: ...
+
+# Integer option
+@bot.tree.command()
+async def sample(interaction: Interaction, number: int) -> None: ...
+
+# Boolean option
+@bot.tree.command()
+async def sample(interaction: Interaction, boolean: bool) -> None: ...
+
+# Channel option
+@bot.tree.command()
+async def sample(interaction: Interaction, channel: GuildChannel) -> None: ...
+
+# Member option
+@bot.tree.command()
+async def sample(interaction: Interaction, member: Member) -> None: ...
+
+# User option
+@bot.tree.command()
+async def sample(interaction: Interaction, user: User) -> None: ...
+
+# Attachment option
+@bot.tree.command()
+async def sample(interaction: Interaction, attachment: Attachment) -> None: ...
+```
+
+You can make a command option be optionally filled with ` typing.Optional ` or assigning a default value to the argument:
+```py
+from discord import Interaction
+from typing import Optional
+
+# Using typing.Optional
+@bot.tree.command()
+async def sample(interaction: Interaction, string: Optional[str]) -> None: ...
+
+# Setting a default value
+@bot.tree.command()
+async def sample(interaction: Interaction, string: str = "Hello world") -> None: ...
+```
+
+
+### Command Choices
+Similarly to command options, choices lets the user type a value to the option, except the values are only limited to what's given to the command.
+
+There are two ways to append choices to the command:
+
+**1. Using ` @app_commands.choices() ` decorator.**
+The decorator takes in keyword arguments. These arguments must be passed with a list of ` Choice ` objects whose ` value ` matches the type annotation of its corresponding argument.
+```py
+from discord import Interaction
+from discord.app_commands import Choice, choices
+
+@bot.tree.command()
+@choices(
+  languages = [
+    Choice(
+      name = "Python",
+      value = "py"
+    ),
+    Choice(
+      name = "JavaScript",
+      value = "js
+    )
+  ]
+)
+async def sample(interaction: Interaction, languages: str) -> None: ...
+```
+
+**2. Using ` Literal ` type hinting.**
+All values inside the type hint must have the same types.
+```py
+from discord import Interaction
+from typing import Literal
+
+@bot.tree.command()
+async def sample(interaction: Interaction, languages: Literal["py", "js"]) -> None: ...
+```
+
+
+### Construct
+**1. Command Name**
+The name of the slash command will default to the name of the function the decorator is attached to. If you wish to change its name, pass in the ` name ` parameter to the ` @command() ` decorator:
+```py
+from discord import Interaction
+
+@bot.tree.command(name = "test")
+async def sample(interaction: Interaction) -> None: ...
+  # /test
+```
+
+**2. Command Description**
+To set the description for the command, pass the ` description ` parameter to the ` @command() ` decorator. If not specified, it defaults to an ellipsis ` ... ` in the UI:
+```py
+from discord import Interaction
+
+@bot.tree.command(description = "Hello world")
+async def sample(interaction: Interaction) -> None: ...
+```
+
+
+## Context Menu Commands
+Context menu commands can be ran when you right-click a message or user/member and are found under the **Apps** section.
+
+To create a context menu command, we are to use the ` @CommandTree.context_menu() ` decorator. Unlike slash commands, there are two required arguments for the context menu command's callback: the ` Interaction ` object, and the context at which this command can be ran on, i.e to a ` Member `, ` User `, or ` Message `.
+
+
+### Member Context Menu Commands
+These types of context menu commands can be ran on a guild member. The second argument is a ` Member ` object, the guild member that the command was actioned on.
+```py
+from discord import Interaction, Member
+
+@bot.tree.context_menu()
+async def sample(interaction: Interaction, member: Member) -> None: ...
+```
+
+
+### User Context Menu Commands
+These types of context menu commands can be ran on a user. The second argument is a ` User ` object, the user that the command was actioned on.
+```py
+from discord import Interaction, User
+
+@bot.tree.context_menu()
+async def sample(interaction: Interaction, user: User) -> None: ...
+```
+
+This can also be union'd with the ` Member ` type:
+```py
+from discord import Interaction, Member, User
+from typing import Union
+
+@bot.tree.context_menu()
+async def sample(interaction: Interaction, user: Union[Member, User]) -> None: ...
+```
+
+
+### Message Context Menu Commands
+These types of context menu commands can be ran on a message. The second argument is a ` Message ` object, the message that the command was actioned on.
+```py
+from discord import Interaction, Message
+
+@bot.tree.context_menu()
+async def sample(interaction: Interaction, message: Message) -> None: ...
+```
+
+
+### Construct
+**1. Command Name**
+Unlike slash commands, the name of the context menu commands can contain uppercase letters and spaces. These can be set inside the ` @context_menu() ` decorator:
+```py
+from discord import Interaction, Member, User
+from typing import Union
+
+@bot.tree.context_menu(name = "Say Hello")
+async def sample(interaction: Interaction, user: Union[Member, User]) -> None: ...
+```
+
+
+## Responding to an Interaction
+The ` response ` property of an ` Interaction ` object returns an ` InteractionResponse ` instance which contains methods of acknowledging the interaction.
+
+> **Note**: You can only respond to an interaction **once**.
+
+
+### Sending a messsage
+Commonly, responding to the interaction is done via ` async InteractionResponse.send_message() `, which is similar to ` async Messageable.send() `.
+```py
+from discord import Interaction
+
+@bot.tree.command()
+async def sample(interaction: Interaction) -> None:
+  await interaction.response.send_message("Hello world!")
+```
+
+
+### Deferring the response
+By default, you are to acknowledge the interaction within 3 seconds, otherwise it will invalidate. If you wish to respond to the interaction later than 3 seconds, call ` async InteractionResponse.defer() `. To update the deferred response, the ` Interaction.followup ` property is used.
+```py
+from asyncio import sleep
+from discord import Interaction
+
+@bot.tree.command()
+async def sample(interaction: Interaction) -> None:
+  await interaction.response.defer()
+  await sleep(5) # Wait 5 seconds
+  await interaction.followup.send("Hello world")
+```
+
+> **Note**: If the interaction type is a slash command or context menu command, ` thinking ` parameter will always be ` True `.
+
+
+### Sending a modal
+To respond to an interaction with a modal, call ` async InteractionResponse.send_modal() ` with a ` Modal ` object passed into it.
+```py
+from discord import Interaction
+from discord.ui import Modal
+
+class SampleModal(Modal): ...
+
+@bot.tree.command()
+async def sample(interaction: Interaction) -> None:
+  await interaction.response.send_modal(SampleModal())
+```
