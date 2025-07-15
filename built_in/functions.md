@@ -290,3 +290,22 @@ Without arguments, returns the list of names in the current local scope. With an
 ```
 
 > Source: [` Built-in Functions | dir() `](<https://docs.python.org/3/library/functions.html#dir>)
+
+
+### divmod()
+Take two (non-complex) numbers as arguments and return a pair of numbers consisting of their quotient and remainder when using integer division.
+
+**Parameters**:
+- **a**: Union[` int `, ` float `]
+- **b**: Union[` int `, ` float `]
+
+**Returns**: Tuple[Union[` int `, ` float `], Union[` int `, ` float `]]
+
+```py
+>>> divmod(6, 3)
+(2, 0)
+>>> divmod(6, 4)
+(1, 2)
+```
+
+> Source: [` Built-in Functions | divmod() `](<https://docs.python.org/3/library/functions.html#divmod>)
