@@ -331,3 +331,20 @@ Returns an enumerate object; yielding a tuple containing a count (from ` start `
 ```
 
 > Source: [` Built-in Functions | enumerate() `](<https://docs.python.org/3/library/functions.html#enumerate>)
+
+
+### filter()
+Construct an iterator from those elements of ` iterable ` for which ` function(element) ` is ` True `.
+
+**Parameters**:
+- **function**: Union[Callable[` Object `, ` bool `], ` None `] - If ` None `, the identity function is assumed, that is, all elements of ` iterable ` that are false are removed.
+- **iterable**: Union[Sequence, Container, Iterator]
+
+```py
+>>> samples: list[Union[int, None]] = [1, None, 3, 4, None]
+>>> filtered_samples: list[Union[int]] = [item for item in filter(None, samples)]
+>>> filtered_samples
+[1, 3, 4]
+```
+
+> Source: [` Built-in Functions | filter() `](<https://docs.python.org/3/library/functions.html#filter>)
