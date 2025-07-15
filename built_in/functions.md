@@ -348,3 +348,25 @@ Construct an iterator from those elements of ` iterable ` for which ` function(e
 ```
 
 > Source: [` Built-in Functions | filter() `](<https://docs.python.org/3/library/functions.html#filter>)
+
+
+### float()
+Return a floating-point number constructed from a number or a string. If no argument is given, returns ` 0.0 `.
+
+**Parameters**:
+- **arg**: Optional[Union[` str `, ` int `, ` float `]]
+
+**Returns**: ` float `
+
+```py
+>>> float()
+0.0
+>>> float(1)
+1.0
+>>> float("123")
+123.0
+>>> float(1.0)
+1.0
+```
+
+> Source: [` Built-in Functions | float() `](<https://docs.python.org/3/library/functions.html#float>)
