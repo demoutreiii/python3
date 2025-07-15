@@ -210,7 +210,7 @@ The optional ` source ` parameter can be used to initialize the array in a few d
 
 
  ### callable()
- Return ` True if the ` object ` argument appears callable, ` False ` if not. If this returns ` True `, it is still possible that a call fails, but if it is ` False `, calling ` object ` will never succeed. Note that classes are callable (calling a class returns a new instance); instances are callable if their class has a [` __call__() `](<https://docs.python.org/3/reference/datamodel.html#object.__call__>) method.
+ Return ` True ` if the ` object ` argument appears callable, ` False ` if not. If this returns ` True `, it is still possible that a call fails, but if it is ` False `, calling ` object ` will never succeed. Note that classes are callable (calling a class returns a new instance); instances are callable if their class has a [` __call__() `](<https://docs.python.org/3/reference/datamodel.html#object.__call__>) method.
 
  **Parameters**:
 - **object**: ` Object `
@@ -271,4 +271,22 @@ Create a new dictionary.
 
 **Returns**: ` dict `
 
-> Source: [` Built-in Types | dict() `](<https://docs.python.org/3/library/stdtypes.html#dict>)
+> Source: [` Built-in Functions | dict() `](<https://docs.python.org/3/library/stdtypes.html#dict>)
+
+
+### dir()
+Without arguments, returns the list of names in the current local scope. With an argument, attempts to return a list of valid attributes for that object.
+
+**Parameters**:
+- **object**: ` Object `
+
+*Returns**: List[` str `]
+
+```py
+>>> dir()
+['__builtins__', '__name__']
+>>> dir(print)
+['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
+```
+
+> Source: [` Built-in Functions | dir() `](<https://docs.python.org/3/library/functions.html#dir>)
