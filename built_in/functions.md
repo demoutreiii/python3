@@ -309,3 +309,25 @@ Take two (non-complex) numbers as arguments and return a pair of numbers consist
 ```
 
 > Source: [` Built-in Functions | divmod() `](<https://docs.python.org/3/library/functions.html#divmod>)
+
+
+### enumerate()
+Returns an enumerate object; yielding a tuple containing a count (from ` start ` which defaults to ` 0 `) and the values obtained from iterating over ` iterable `.
+
+**Parameters**:
+- **iterable**: Iterable
+- **start**: ` int ` = start of the count. Defaults to ` 0 `.
+
+**Returns**: Tuple[` int `, ` Object `]
+
+```py
+>>> fruits: list[str] = ["apple", "orange", "banana"]
+>>> for count, fruit in enumerate(fruits):
+...   print(count, fruit)
+...
+0 apple
+1 orange
+2 banana
+```
+
+> Source: [` Built-in Functions | enumerate() `](<https://docs.python.org/3/library/functions.html#enumerate>)
