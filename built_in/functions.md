@@ -383,15 +383,20 @@ Returns a new [` frozenset `](https://docs.python.org/3/library/stdtypes.html#fr
 > Source: [` Built-in Functions | frozenset() `](<https://docs.python.org/3/library/stdtypes.html#frozenset>)
 
 
-#### getattr()
+### getattr()
 Return the value of the named attribute of ` object `.
+
+` getattr(x, "foobar") ` is equivalent to ` x.foobar `.
 
 **Parameters**:
 - **object**: ` Object `
 - **name**: ` str ` = name of the attribute
 - **default**: Optional[Any] = what is returned if the ` name ` attribute doesn't exist in ` object `. If not provided, [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) is raised.
 
-` getattr(x, "foobar") ` is equivalent to ` x.foobar `.
+**Returns**: Any
+
+**Raises**:
+- [**AttributeError**](https://docs.python.org/3/library/exceptions.html#AttributeError) = There is no provided ` name ` attribute of the ` object `, and ` default ` is not provided.
 
 ```py
 >>> class Sample:
@@ -408,4 +413,29 @@ Return the value of the named attribute of ` object `.
 ### globals()
 Return the dictionary implementing the current module namespace. For code within functions, this is set when the function is defined and remains the same regardless of where the function is called.
 
+**Returns**: dict[` str `, Any]
+
 > Source: [` Built-in Functions | globals() `](https://docs.python.org/3/library/functions.html#globals)
+
+
+### hasattr()
+Returns ` True ` if the string is the name of one of the object's attributes, otherwise ` False `. This is implemented by calling ` getattr(object, name) ` and seeing whether it raises an [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) or not.
+
+**Parameters**:
+- **object**: ` Object `
+- **name**: ` str `
+
+```py
+>>> class Sample:
+...   text: str = "hello world"
+...
+>>> sample = Sample()
+>>> getattr(sample, "text)
+hello world
+>>> hasattr(sample, "number")
+False
+>>> hasattr(sample, "text")
+True
+```
+
+> Source: [` Built-in Functions | hasattr() `](https://docs.python.org/3/library/functions.html#hasattr)
