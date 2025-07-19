@@ -493,3 +493,29 @@ Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) 
 **Returns**: ` int `
 
 > Source: [` Built-in Functions | id() `](https://docs.python.org/3/library/functions.html#id)
+
+
+### input()
+Receive a[n interactive] string input from the user.
+
+If the ` prompt ` argument is present, it is written to standard output without a trailing newline. The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that. When EOF is read, [EOFError](https://docs.python.org/3/library/exceptions.html#EOFError) is raised.
+
+If [` readline `](https://docs.python.org/3/library/readline.html#module-readline) module was loaded, then [` input() `](https://docs.python.org/3/library/functions.html#input) will use it to provide elaborate line editing and history.
+
+Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) ` builtins.input ` with argument ` prompt ` before reading input.
+
+Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) ` builtins.input/result ` with the result after successfully reading input.
+
+**Parameters**:
+- **prompt**: ` str `
+
+**Returns**: ` str `
+
+```py
+>>> string: str = input("Text: ")
+Text: hello world
+>>> string
+hello world
+```
+
+> Source: [` Built-in Functions | input() `](https://docs.python.org/3/library/functions.html#input)
