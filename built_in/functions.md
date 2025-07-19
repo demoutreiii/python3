@@ -574,3 +574,11 @@ Returns the length (number of items) of an object.
 **Returns**: ` int `
 
 > Source: [` Built-in Functions | len() `](https://docs.python.org/3/library/functions.html#len)
+
+
+### locals()
+Returns a mapping object representing the current local symbol table, with variable names as the keys, and their currently bound references as the values.
+
+**Returns**: Dict[` str `, Any]
+
+> Source: [` Built-in Functions | locals() `](https://docs.python.org/3/library/functions.html#locals)
