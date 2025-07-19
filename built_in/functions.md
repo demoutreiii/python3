@@ -519,3 +519,19 @@ hello world
 ```
 
 > Source: [` Built-in Functions | input() `](https://docs.python.org/3/library/functions.html#input)
+
+
+### int()
+Returns an integer object constructed from a number or string, or returns ` 0 ` if no arguments are given.
+
+If the argument defines [` __int__() `](https://docs.python.org/3/reference/datamodel.html#object.__int__), ` int(x) ` returns ` x.__int__() `. If the argument defines [` __index__() `](https://docs.python.org/3/reference/datamodel.html#object.__index__), it returns ` x.__index__() `. If the argument defines [` __trunc__() `](https://docs.python.org/3/reference/datamodel.html#object.__trunc__), it returns ` x.__trunc__() `. For floating-point numbers, this truncates toward zero.
+
+If the argument is not a number or if ` base ` argument is given, then it must be a string, [` bytes `](https://docs.python.org/3/library/stdtypes.html#bytes), [` bytearray `](https://docs.python.org/3/library/stdtypes.html#bytearray) instance representing an integer in radix ` base `.
+
+**Parameters**:
+- **object**: Union[Number, ` str `, ` bytes `, ` bytearray `]
+- **base**: Optional[` int `] = defaults to ` 10 `
+
+**Returns**: ` int `
+
+> Source: [` Built-in Functions | int() `](https://docs.python.org/3/library/functions.html#int)
