@@ -535,3 +535,15 @@ If the argument is not a number or if ` base ` argument is given, then it must b
 **Returns**: ` int `
 
 > Source: [` Built-in Functions | int() `](https://docs.python.org/3/library/functions.html#int)
+
+
+### isinstance()
+Returns ` True ` if the ` object ` argument is an instance of the ` classinfo ` argument, or of a (direct, indirect, or [virtual](https://docs.python.org/3/glossary.html#term-abstract-base-class)) subclass thereof.
+
+**Parameters**:
+- **object**: ` Object `
+- **classinfo**: Union[Type, Tuple[Type], Union[Type]]
+
+**Returns**: ` bool `
+
+> Source: [` Built-in Functions | isinstance() `](https://docs.python.org/3/library/functions.html#isinstance)
