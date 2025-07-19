@@ -619,3 +619,12 @@ If multiple items are maximal, the function returns the first one encountered.
 **Returns**: Any
 
 > Source: [` Built-in Functions | max() `](https://docs.python.org/3/library/functions.html#max)
+
+
+### memoryview()
+Returns a "memory view" object created from the given argument. See [Memory Views](https://docs.python.org/3/library/stdtypes.html#typememoryview) for more information.
+
+**Parameters**:
+- **object**: Object
+
+**Returns**: "Memory view" object
