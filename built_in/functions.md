@@ -594,3 +594,19 @@ For cases where the function inputs are already assigned into argument tuples, s
 **Returns**: Iterable
 
 > Source: [` Built-in Functions | map() `](https://docs.python.org/3/library/functions.html#map)
+
+
+### max()
+Return the largest item in an iterable or two or more arguments.
+
+If one positional argument is provided, it should be an [iterable](https://docs.python.org/3/glossary.html#term-iterable). If two or more positional arguments are provided, the largest of the positional arguments is returned.
+
+There are two optional keyword-only arguments:
+- **key**: Optional[Callable] = specifies a one-argument ordering function like that used for [` list.sort() `](https://docs.python.org/3/library/stdtypes.html#list.sort)
+- **default**: Optional[Object] = specifies an object to return if the provided iterable is empty. If the iterable is empty and ` default ` argument is not provided, [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is raised.
+
+If multiple items are maximal, the function returns the first one encountered.
+
+**Returns**: Any
+
+> Source: [` Built-in Functions | max() `](https://docs.python.org/3/library/functions.html#max)
