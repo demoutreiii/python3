@@ -465,3 +465,16 @@ This function is added to the built-in namespace by the [` site `](https://docs.
 !!! NOTE **NOTE**: This function is intended for interactive use.
 
 > Source: [` Built-in Functions | help() `](<https://docs.python.org/3/library/functions.html#help>)
+
+
+### hex()
+Convert an integer number to a lowercase hexadecimal string prefixed with "0x". If ` x ` is not a Python [` int `](https://docs.python.org/3/library/functions.html#int) object, it has to define an [` __index__() `](https://docs.python.org/3/reference/datamodel.html#object.__index__) that returns an integer.
+
+**Parameters**:
+- **x**: Union[` int `, ` Object `]
+
+**Returns**: ` str `
+
+!!! NOTE **Note**: To obtain a hexadecimal string representation of a float, use the [` float.hex() `](https://docs.python.org/3/library/stdtypes.html#float.hex) method.
+
+> Source: [` Built-in Functions | hex() `](https://docs.python.org/3/library/functions.html#hex)
