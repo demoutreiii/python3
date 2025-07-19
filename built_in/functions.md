@@ -561,3 +561,16 @@ A class is considered a subclass of itself.
 **Returns**: ` bool `
 
 > Source: [` Built-in Functions | issubclass() `](https://docs.python.org/3/library/functions.html#issubclass)
+
+
+### len()
+Returns the length (number of items) of an object.
+
+**CPython implementation detail**: ` len ` raises [OverflowError](https://docs.python.org/3/library/exceptions.html#OverflowError) on lengths larger than [` sys.maxsize `](https://docs.python.org/3/library/sys.html#sys.maxsize), such as ` range(2 ** 100) `.
+
+**Parameters**:
+- **object**: Union[Sequence, Collection, Object]
+
+**Returns**: ` int `
+
+> Source: [` Built-in Functions | len() `](https://docs.python.org/3/library/functions.html#len)
