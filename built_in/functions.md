@@ -654,3 +654,13 @@ Retrieve the next item from the [iterator](https://docs.python.org/3/glossary.ht
 **Returns**: Object
 
 > Source: [` Built-in Functions | next() `](https://docs.python.org/3/library/functions.html#next)
+
+
+### object
+This is the ultimate base class of all other classes. It has methods that are common to all instances of Python classes. When the constructor is called, it returns a new featureless object.
+
+**Returns**: Object
+
+!!! NOTE **NOTE**: [` object `](https://docs.python.org/3/library/functions.html#object) instances do not have [` __dict__ `](https://docs.python.org/3/reference/datamodel.html#object.__dict__) attributes, so you can't assign arbitrary attributes to an instance of [` object `](https://docs.python.org/3/library/functions.html#object).
+
+> Source: [` Built-in Functions | object() `](https://docs.python.org/3/library/functions.html#object)
