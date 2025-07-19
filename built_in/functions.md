@@ -450,3 +450,16 @@ Returns the hash value of ` object ` (if it has one).
 **Returns**: Optional[` int `]
 
 > Source: [` Built-in Functions | hash() `](<https://docs.python.org/3/library/functions.html#hash>)
+
+
+### help()
+Invokes the built-in help system.
+
+If no argument is given, the interactive help system starts on the interpreter console. If the argument is a string, then the string is looked up as the name of a module, function, class, method, keyword, or documentation topic, and a help page is printed on the console. If the argument is any other kind of object, a help page on the object is generated.
+
+This function is added to the built-in namespace by the [` site `](https://docs.python.org/3/library/site.html#module-site) module.
+
+**Parameters**:
+- **request**: Optional[Union[` str `, Any]]
+
+> Source: [` Built-in Functions | help() `](<https://docs.python.org/3/library/functions.html#help>)
