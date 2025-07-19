@@ -439,3 +439,14 @@ True
 ```
 
 > Source: [` Built-in Functions | hasattr() `](https://docs.python.org/3/library/functions.html#hasattr)
+
+
+### hash()
+Returns the hash value of ` object ` (if it has one).
+
+**Parameters**:
+- **object**: ` Object `
+
+**Returns**: Optional[` int `]
+
+> Source: [` Built-in Functions | hash() `](<https://docs.python.org/3/library/functions.html#hash>)
