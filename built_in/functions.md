@@ -628,3 +628,17 @@ Returns a "memory view" object created from the given argument. See [Memory View
 - **object**: Object
 
 **Returns**: "Memory view" object
+
+
+### min()
+Returns the smallest item in an iterable or the smallest of two or more arguments.
+
+If one positional argument is provided, it should be an [iterable](https://docs.python.org/3/glossary.html#term-iterable). The smallest item in the iterable is returned. If two or more positional arguments are provided, the smallest of the positional arguments is returned.
+
+There are two optional keyword-only arguments:
+- **key**: Optional[Callable] = specifies a one-argument ordering function like that used for [` list.sort() `](https://docs.python.org/3/library/stdtypes.html#list.sort).
+- **default**: Optional[Object] = specifies an object to return if the provided iterable is empty. If the iterable is empty and ` default ` argument is not provided, [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is raised.
+
+If multiple items are minimal, the function returns the first one encountered.
+
+> Source: [` Built-in Functions | min() `](https://docs.python.org/3/library/functions.html#min)
