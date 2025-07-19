@@ -391,4 +391,21 @@ Return the value of the named attribute of ` object `.
 - **name**: ` str ` = name of the attribute
 - **default**: Optional[Any] = what is returned if the ` name ` attribute doesn't exist in ` object `. If not provided, [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) is raised.
 
+` getattr(x, "foobar") ` is equivalent to ` x.foobar `.
+
+```py
+>>> class Sample:
+...   number: int = 123
+...
+>>> sample = Sample()
+>>> getattr(sample, number)
+123
+```
+
 > Source: [` Built-in Functions | getattr() `](https://docs.python.org/3/library/functions.html#getattr)
+
+
+### globals()
+Return the dictionary implementing the current module namespace. For code within functions, this is set when the function is defined and remains the same regardless of where the function is called.
+
+> Source: [` Built-in Functions | globals() `](https://docs.python.org/3/library/functions.html#globals)
