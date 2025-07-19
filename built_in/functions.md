@@ -642,3 +642,15 @@ There are two optional keyword-only arguments:
 If multiple items are minimal, the function returns the first one encountered.
 
 > Source: [` Built-in Functions | min() `](https://docs.python.org/3/library/functions.html#min)
+
+
+### next()
+Retrieve the next item from the [iterator](https://docs.python.org/3/glossary.html#term-iterator) by calling its [` __next__() `](https://docs.python.org/3/library/stdtypes.html#iterator.__next__) method.
+
+**Parameters**:
+- **iterator**: Iterator
+- **default**: Optional[Object] = object to return if the iterator is exhausted, otherwise [` StopIteration `](https://docs.python.org/3/library/exceptions.html#StopIteration) is raised.
+
+**Returns**: Object
+
+> Source: [` Built-in Functions | next() `](https://docs.python.org/3/library/functions.html#next)
