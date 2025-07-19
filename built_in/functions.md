@@ -1,6 +1,3 @@
-## Built-In Functions
-
-
 ### abs()
 Return the absolute value of an integer, floating-point, or an object implementing [` __abs__() `](<https://docs.python.org/3/reference/datamodel.html#object.__abs__>). If the argument is a complex number, its magnitude is returned.
 
@@ -582,3 +579,18 @@ Returns a mapping object representing the current local symbol table, with varia
 **Returns**: Dict[` str `, Any]
 
 > Source: [` Built-in Functions | locals() `](https://docs.python.org/3/library/functions.html#locals)
+
+
+### map()
+Return an iterator that applies ` function ` argument to every item of ` iterable ` argument, yielding the results. If additional iterables are passed, ` function ` argument must take that many arguments and is applied to the items from all iterables in parallel. With multiple iterables, the iterator stops when the shortest iterable is exhausted.
+
+For cases where the function inputs are already assigned into argument tuples, see [` itertools.starmap() `](https://docs.python.org/3/library/itertools.html#itertools.starmap).
+
+**Parameters**:
+- **function**: Callable
+- **iterable**: Iterable
+- **iterables**: Optional[Iterable] = additional iterable arguments
+
+**Returns**: Iterable
+
+> Source: [` Built-in Functions | map() `](https://docs.python.org/3/library/functions.html#map)
