@@ -159,14 +159,8 @@ from discord.app_commands import Choice, choices
 @bot.tree.command()
 @choices(
   languages = [
-    Choice(
-      name = "Python",
-      value = "py"
-    ),
-    Choice(
-      name = "JavaScript",
-      value = "js
-    )
+    Choice(name = "Python", value = "py"),
+    Choice(name = "JavaScript", value = "js)
   ]
 )
 async def sample(interaction: Interaction, languages: str) -> None: ...
@@ -181,6 +175,26 @@ from typing import Literal
 @bot.tree.command()
 async def sample(interaction: Interaction, languages: Literal["py", "js"]) -> None: ...
 ```
+
+
+### Command Autocompletes
+Autocompletes allow you to have dynamic set of choices that relies on certain criterias given the typed out text by the user.
+
+[` @autocomplete() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.autocomplete>) decorator is used to configure the autocomplete handler of the slash command option. The autocomplete handler takes two arguments: the [` Interaction `](https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction) object; and the current string of text the user has typed out.
+
+```py
+async def numbers_autocomplete(interaction: Interaction, current: str) -> list[Choice]:
+  numbers: dict[str, int] = { "one": 1, "two": 2, "three": 3 }
+  return [ Choice(name = name, value = numbers.get(name)) for name in numbers if current.lower() in name.lower() ]
+
+
+@app_commands.command()
+@app_commands.autocomplete(number = numbers_autocomplete)
+async def sample(interaction: Interaction, number: int) -> None:
+  ...
+```
+
+!!! NOTE **NOTE**: Autocompletes are not strict and the user can input any text they want despite the value not as valid as an choice.
 
 
 ### Construct
@@ -264,7 +278,7 @@ async def sample(interaction: Interaction, user: Union[Member, User]) -> None: .
 ## Responding to an Interaction
 The ` response ` property of an ` Interaction ` object returns an ` InteractionResponse ` instance which contains methods of acknowledging the interaction.
 
-> **Note**: You can only respond to an interaction **once**.
+!!! NOTE: **NOTE**: You can only respond to an interaction **once**.
 
 
 ### Sending a messsage
@@ -291,7 +305,7 @@ async def sample(interaction: Interaction) -> None:
   await interaction.followup.send("Hello world")
 ```
 
-> **Note**: If the interaction type is a slash command or context menu command, ` thinking ` parameter will always be ` True `.
+!!! NOTE: **NOTE**: If the interaction type is a slash command or context menu command, ` thinking ` parameter will always be ` True `.
 
 
 ### Sending a modal
@@ -305,4 +319,32 @@ class SampleModal(Modal): ...
 @bot.tree.command()
 async def sample(interaction: Interaction) -> None:
   await interaction.response.send_modal(SampleModal())
+```
+
+
+## User-Installable Application Commands
+User-installable application commands allows you to use the application commands anywhere (as configured in the installation contexts) without the need of the bot user's presence in that context, e.g. in a server, DM or Group DM.
+
+To configure an application command to be user-installable, ` users ` parameter of the [` @allowed_installs() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.allowed_installs>) is set to ` True `, or the [` @user_install() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.user_install>) is attached.
+
+```py
+@app_commands.command()
+@allowed_installs(users = True)
+async def sample(interaction: Interaction) -> None:
+  ...
+```
+
+To set on which contexts the application command can be used, [` @allowed_contexts() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.allowed_contexts>) is provided.
+
+**Parameters**:
+- ` guilds `: ` bool ` = Whether the application command is executable in a Discord server.
+- ` dms `: ` bool ` = Whether the application command is executable in the bot's DM.
+- ` private_channels `: ` bool ` = Whether the application command is executable in DMs and Group DMs other than the bot's.
+
+```py
+@app_commands.command()
+@user_install()
+@allowed_contexts(guilds = True, dms = True, private_channels = True)
+async def sample(interaction: Interaction) -> None:
+  ...
 ```
