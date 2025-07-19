@@ -573,6 +573,15 @@ Returns the length (number of items) of an object.
 > Source: [` Built-in Functions | len() `](https://docs.python.org/3/library/functions.html#len)
 
 
+### list()
+Rather than being a function, [` list `](https://docs.python.org/3/library/stdtypes.html#list) is actually a mutable sequence type, as documented in [Lists](https://docs.python.org/3/library/stdtypes.html#typesseq-list) and [Sequence Types --- list, tuple, range](https://docs.python.org/3/library/stdtypes.html#typesseq).
+
+**Parameters**:
+- **iterable**: Optional[Iterable]
+
+**Returns**: List
+
+
 ### locals()
 Returns a mapping object representing the current local symbol table, with variable names as the keys, and their currently bound references as the values.
 
