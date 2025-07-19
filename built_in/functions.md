@@ -370,3 +370,14 @@ Return a floating-point number constructed from a number or a string. If no argu
 ```
 
 > Source: [` Built-in Functions | float() `](<https://docs.python.org/3/library/functions.html#float>)
+
+
+### frozenset()
+Returns a new [` frozenset `](https://docs.python.org/3/library/stdtypes.html#frozenset) object, optionally with elements taken from ` iterable ` argument.
+
+**Parameters**:
+- ` iterable `: Optional[Iterable]
+
+**Returns**: [` frozenset `](https://docs.python.org/3/library/stdtypes.html#frozenset)
+
+> Source: [` Built-in Functions | frozenset() `](<https://docs.python.org/3/library/stdtypes.html#frozenset>)
