@@ -547,3 +547,17 @@ Returns ` True ` if the ` object ` argument is an instance of the ` classinfo ` 
 **Returns**: ` bool `
 
 > Source: [` Built-in Functions | isinstance() `](https://docs.python.org/3/library/functions.html#isinstance)
+
+
+### issubclass()
+Returns ` True ` if ` class ` argument is a subclass (direct, indirect, or [virtual](https://docs.python.org/3/glossary.html#term-abstract-base-class)) of ` classinfo ` argument, otherwise ` False `.
+
+A class is considered a subclass of itself.
+
+**Parameters**:
+- **class**: Class
+- **classinfo**: Union[Class, Tuple[Class], Union[Class]]
+
+**Returns**: ` bool `
+
+> Source: [` Built-in Functions | issubclass() `](https://docs.python.org/3/library/functions.html#issubclass)
