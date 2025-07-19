@@ -462,4 +462,6 @@ This function is added to the built-in namespace by the [` site `](https://docs.
 **Parameters**:
 - **request**: Optional[Union[` str `, Any]]
 
+!!! NOTE **NOTE**: This function is intended for interactive use.
+
 > Source: [` Built-in Functions | help() `](<https://docs.python.org/3/library/functions.html#help>)
