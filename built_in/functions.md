@@ -478,3 +478,18 @@ Convert an integer number to a lowercase hexadecimal string prefixed with "0x". 
 !!! NOTE **Note**: To obtain a hexadecimal string representation of a float, use the [` float.hex() `](https://docs.python.org/3/library/stdtypes.html#float.hex) method.
 
 > Source: [` Built-in Functions | hex() `](https://docs.python.org/3/library/functions.html#hex)
+
+
+### id()
+Returns the "identity" of an object. This is an integer which is guaranteed to be unique and constant for this object during its lifetime. Two objects with non-overlapping lifetimes may have the same [` id() `](https://docs.python.org/3/library/functions.html#id) value.
+
+**CPython implementation detail**: This is the address of the object in memory.
+
+Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) ` builtins.id ` with argument ` id `.
+
+**Parameters**:
+- **object**: ` Object `
+
+**Returns**: ` int `
+
+> Source: [` Built-in Functions | id() `](https://docs.python.org/3/library/functions.html#id)
