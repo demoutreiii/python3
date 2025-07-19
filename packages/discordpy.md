@@ -1,9 +1,63 @@
+# Table of Contents
+- [Official Documentation](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#official-documentation>)
+- [Installation](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#installation>)
+- [QuickStart](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#quickstart>)
+- [Application Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#application-commands>)
+  - [Slash Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#slash-commands>)
+    - [Command Options](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#command-options>)
+    - [Command Choices](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#command-choices>)
+    - [Command Autocompletes](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#command-autocompletes>)
+    - [Construct](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#construct>)
+  - [Context Menu Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#context-menu-commands>)
+    - [Member Context Menu Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#member-context-menu-commands>)
+    - [User Context Menu Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#user-context-menu-commands>)
+    - [Message Context Menu Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#message-context-menu-commands>)
+    - [Construct](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#construct-1>)
+  - [Responding to an Interaction](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#responding-to-an-interaction>)
+    - [Sending a message](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#sending-a-messsage>)
+    - [Deferring the response](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#deferring-the-response>)
+    - [Sending a modal](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#sending-a-modal>)
+  - [User-Installable Application Commands](<https://github.com/demoutreiii/python3/blob/main/packages/discordpy.md#user-installable-application-commands>)
+
+
+# Official Documentation
+For official documentation on the library, visit discordpy.readthedocs.io/en/stable.
+
+**Indices**:
+- [Getting Started](<https://discordpy.readthedocs.io/en/stable/#getting-started>)
+  - [Introduction](<https://discordpy.readthedocs.io/en/stable/intro.html>)
+  - [QuickStart](<https://discordpy.readthedocs.io/en/stable/quickstart.html>)
+  - [Setting Up Logging](<https://discordpy.readthedocs.io/en/stable/logging.html>)
+  - [Creating a Bot Account](<https://discordpy.readthedocs.io/en/stable/discord.html>)
+  - [A Primer to Gateway Intents](<https://discordpy.readthedocs.io/en/stable/intents.html>)
+  - [Examples](<https://github.com/Rapptz/discord.py/tree/v2.5.2/examples>)
+- [Getting Help](<https://discordpy.readthedocs.io/en/stable/#getting-help>)
+  - [Frequently Asked Questions](<https://discordpy.readthedocs.io/en/stable/faq.html>)
+  - Join the [discord.gg/dpy](<https://discord.gg/r3sSKJJ>) Discord server
+  - Try the [index](<https://discordpy.readthedocs.io/en/stable/genindex.html>) or [searching](<https://discordpy.readthedocs.io/en/stable/search.html>)
+  - Report bugs in the [issue tracker](<https://github.com/Rapptz/discord.py/issues>)
+  - Ask in the [Github discussions page](<https://github.com/Rapptz/discord.py/discussions>)
+- [Manuals](<https://discordpy.readthedocs.io/en/stable/#manuals>)
+  - [API Reference](<https://discordpy.readthedocs.io/en/stable/api.html>)
+  - [Interactions API Reference](<https://discordpy.readthedocs.io/en/stable/interactions/api.html>)
+  - [discord.ext.commands API Reference](<https://discordpy.readthedocs.io/en/stable/ext/commands/api.html>)
+    - [Commands](<https://discordpy.readthedocs.io/en/stable/ext/commands/commands.html>)
+    - [Cogs](<https://discordpy.readthedocs.io/en/stable/ext/commands/cogs.html>)
+    - [Extensions](<https://discordpy.readthedocs.io/en/stable/ext/commands/extensions.html>)
+    - [API Reference](<https://discordpy.readthedocs.io/en/stable/ext/commands/api.html>)
+  - [discord.ext.tasks API Reference](<https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html>)
+- [Meta](<https://discordpy.readthedocs.io/en/stable/#meta>)
+  - [Changelog](<https://discordpy.readthedocs.io/en/stable/whats_new.html>)
+  - [Version Guarantees](<https://discordpy.readthedocs.io/en/stable/version_guarantees.html>)
+  - [Migrating to v2.0](<https://discordpy.readthedocs.io/en/stable/migrating.html>)
+  - [Migrating to v1.0](<https://discordpy.readthedocs.io/en/stable/migrating.html#migrating-to-v1-0>)
+
+
 # Installation
 To install ` discord.py `, run the following command in a terminal:
 ```py
 $ python -m pip install discord.py
 ```
-
 
 # QuickStart
 Using ` discord.Client `:
