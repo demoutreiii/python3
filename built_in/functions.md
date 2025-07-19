@@ -376,8 +376,19 @@ Return a floating-point number constructed from a number or a string. If no argu
 Returns a new [` frozenset `](https://docs.python.org/3/library/stdtypes.html#frozenset) object, optionally with elements taken from ` iterable ` argument.
 
 **Parameters**:
-- ` iterable `: Optional[Iterable]
+- **iterable**: Optional[Iterable]
 
 **Returns**: [` frozenset `](https://docs.python.org/3/library/stdtypes.html#frozenset)
 
 > Source: [` Built-in Functions | frozenset() `](<https://docs.python.org/3/library/stdtypes.html#frozenset>)
+
+
+#### getattr()
+Return the value of the named attribute of ` object `.
+
+**Parameters**:
+- **object**: ` Object `
+- **name**: ` str ` = name of the attribute
+- **default**: Optional[Any] = what is returned if the ` name ` attribute doesn't exist in ` object `. If not provided, [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) is raised.
+
+> Source: [` Built-in Functions | getattr() `](https://docs.python.org/3/library/functions.html#getattr)
