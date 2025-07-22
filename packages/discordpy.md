@@ -21,7 +21,7 @@
 
 
 # Official Documentation
-For official documentation on the library, visit discordpy.readthedocs.io/en/stable.
+For official documentation on the library, visit [discordpy.readthedocs.io/en/stable](<https://discordpy.readthedocs.io>).
 
 **Indices**:
 - [Getting Started](<https://discordpy.readthedocs.io/en/stable/#getting-started>)
@@ -301,7 +301,8 @@ async def sample(interaction: Interaction, number: int) -> None:
   ...
 ```
 
-!!! NOTE **NOTE**: Autocompletes are not strict and the user can input any text they want despite the value not as valid as an choice.
+> [!NOTE]
+> Autocompletes are not strict and the user can input any text they want despite the value not as valid as an choice.
 
 
 ### Construct
@@ -413,7 +414,8 @@ async def sample(interaction: Interaction) -> None:
 ## Responding to an Interaction
 The ` response ` property of an ` Interaction ` object returns an ` InteractionResponse ` instance which contains methods of acknowledging the interaction.
 
-!!! NOTE: **NOTE**: You can only respond to an interaction **once**.
+> [!NOTE]
+> You can only respond to an interaction **once**.
 
 
 ### Sending a messsage
@@ -440,7 +442,8 @@ async def sample(interaction: Interaction) -> None:
   await interaction.followup.send("Hello world")
 ```
 
-!!! NOTE: **NOTE**: If the interaction type is a slash command or context menu command, ` thinking ` parameter will always be ` True `.
+> [!NOTE]
+> If the interaction type is a slash command or context menu command, ` thinking ` parameter will always be ` True `.
 
 
 ### Sending a modal
@@ -454,4 +457,26 @@ class SampleModal(Modal): ...
 @bot.tree.command()
 async def sample(interaction: Interaction) -> None:
   await interaction.response.send_modal(SampleModal())
+```
+
+
+## Registering Application Commands
+For the application commands to show up, you have to register them first. This is done via calling [` async CommandTree.sync() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree.sync>) and passing in the necessary arguments. Your [` CommandTree `](https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree) object can be accessed from your [` Bot.tree `](<https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.tree>) property, or from the ` Client.tree ` attribute you created.
+
+**Parameters**:
+- **guild**: Optional[[` Snowflake `](https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Snowflake)] = the guild-specific commands to register.
+
+**Returns**: List[[` AppCommand `](https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommand)]
+
+> [!CAUTION]
+> You must not register your application commands automatically, e.g. in ` on_ready ` event, as this can cause your application to hit rate limit. Instead, have it done manually via command or something else ideal to your liking.
+
+> [!CAUTION]
+> If you are to do it through commands, you have to ensure that you, the bot owner/developer, can only run the command and not unwanted anybody else.
+
+```py
+@bot.command()
+@commands.is_owner()
+async def sync(ctx: Context) -> None:
+  await ctx.tree.sync()
 ```
