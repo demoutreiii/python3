@@ -383,6 +383,19 @@ async def sample(interaction: Interaction, user: Union[Member, User]) -> None: .
 ```
 
 
+## Guild-Specific Application Commands
+Application commands can be registered as guild-specific, meaning, they'll only appear on the guilds you specified. There are two ways to construct the application command as guild-specific: passing the ` guild ` **or** ` guilds ` parameter to the [` @CommandTree.command() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree.command>) decorator; or attaching the [` @app_commands.guilds() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.guilds>) decorator.
+
+```py
+@bot.tree.command(guild = GUILD_ID)
+async def sample(interaction: Interaction) -> None:
+  ...
+```
+
+> [!NOTE]
+> When registering guild-specific commands, make sure the Guild IDs in the decorators and in your [` async CommandTree.sync() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree.sync>) match.
+
+
 ## User-Installable Application Commands
 User-installable application commands allows you to use the application commands anywhere (as configured in the installation contexts) without the need of the bot user's presence in that context, e.g. in a server, DM or Group DM.
 
@@ -461,7 +474,14 @@ async def sample(interaction: Interaction) -> None:
 
 
 ## Registering Application Commands
-For the application commands to show up, you have to register them first. This is done via calling [` async CommandTree.sync() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree.sync>) and passing in the necessary arguments. Your [` CommandTree `](https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree) object can be accessed from your [` Bot.tree `](<https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.tree>) property, or from the ` Client.tree ` attribute you created.
+For the application commands to show up, you have to register them first. This is done via calling [` async CommandTree.sync() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree.sync>) and passing in the necessary arguments. Your [` CommandTree `](https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree) object can be accessed from your [` Bot.tree `](<https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.tree>) property.
+
+If you are using the [` Client `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Client>) class, you have to set the attribute yourself, passing your ` Client ` object to the [` CommandTree `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree>) constructor.
+
+```py
+client: Client = Client(...)
+client.tree: CommandTree = CommandTree(client)
+```
 
 **Parameters**:
 - **guild**: Optional[[` Snowflake `](https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Snowflake)] = the guild-specific commands to register.
