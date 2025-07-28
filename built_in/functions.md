@@ -656,7 +656,7 @@ Retrieve the next item from the [iterator](https://docs.python.org/3/glossary.ht
 > Source: [` Built-in Functions | next() `](https://docs.python.org/3/library/functions.html#next)
 
 
-### object
+### object()
 This is the ultimate base class of all other classes. It has methods that are common to all instances of Python classes. When the constructor is called, it returns a new featureless object.
 
 **Returns**: Object
@@ -664,3 +664,43 @@ This is the ultimate base class of all other classes. It has methods that are co
 !!! NOTE **NOTE**: [` object `](https://docs.python.org/3/library/functions.html#object) instances do not have [` __dict__ `](https://docs.python.org/3/reference/datamodel.html#object.__dict__) attributes, so you can't assign arbitrary attributes to an instance of [` object `](https://docs.python.org/3/library/functions.html#object).
 
 > Source: [` Built-in Functions | object() `](https://docs.python.org/3/library/functions.html#object)
+
+
+### open()
+Opens a file, returning a corresponding [file object](<https://docs.python.org/3/glossary.html#term-file-object>).
+
+Available modes for opening a file:
+| Character | Meaning                                                         |
+|-----------|-----------------------------------------------------------------|
+| ` 'r' `   | open for reading (default)                                      |
+| ` 'w' `   | open for writing, truncating the file first                     |
+| ` 'x' `   | open for exclusive creation, failing if the file already exists |
+| ` 'a' `   | open for writing, appending to the end of the file if it exists |
+| ` 'b' `   | binary mode                                                     |
+| ` 't' `   | text mode (default)                                             |
+| ` '+' `   | open for updating (reading and writing)                         |
+
+Valid standard names for decoding/encoding error handling:
+- ` 'strict' ` to raise a [` ValueError `](<https://docs.python.org/3/library/exceptions.html#ValueError>) exception if there is an encoding error. The default value of ` None ` has the same effect.
+- ` 'ignore' ` ignores errors. Note that ignoring encoding errors can lead to data loss.
+- ` 'replace' ` causes a replacement market (such as ` '?' `) to be inserted where there is malformed data.
+- ` 'surrogateescape' ` will represent any incorrect bytes as low surrogate code units ranging from U+DC80 to U+DCFF. These surrogate code units will then be turned back into the same bytes when the ` surrogateescape ` error handler is used when writing data. This is useful for processing files in an unknown encoding.
+- ` 'xmlcharrefreplace' ` is only supported when writing to a file. Characters not supported by the encoding are replaced with the appropriate XML character reference ` &#nnn; `.
+- ` 'backslashreplace' ` replaces malformed data by Python's backslashed escape sequences.
+- ` 'namereplace' ` (also only supported when writing) replaces unsupported characters with ` \N{...} ` escape sequences.
+
+**Parameters**
+- **file**: ` str ` = a [path-like object](<https://docs.python.org/3/glossary.html#term-path-like-object>) giving the pathname (absolute or relative to the current working directory) of the file to be opened or an integer file descriptor of the file to be wrapped. If a file descriptor is given, it is closed when the returned I/O object is closed unless ` closefd ` is set to ` False `.
+- **mode**: Optional[` str `] = specifies the mode in which the file is opened. Defaults to ` 'r' `.
+- **buffering**: Optional[` int `] = optional integer used to set the buffering policy: ` 0 ` to switch buffering off (only allowed in binary mode); ` 1 ` to select line buffering (only usable when writing in text mode); and an integer > 1 to indicate the size in bytes of a fixed-size chunk buffer. Defaults to ` -1 `.
+- **encoding**: Optional[` str `] = name of the encoding used to decode or encode the file. This should only be used in text mode.
+- **errors**: Optional[` str `] = specifies how encoding and decoding errors are to be handled -- this cannot be used in binary mode. Defaults to ` None `.
+- **newline**: Optional[` str `] = determines how to parse newline characters from the stream. It can be ` None `, ` '' `, ` '\n' `, ` '\r' `, and ` '\r\n' `. Defaults to ` None `.
+- **closefd**: Optional[` bool `] = If ` False ` and a file descriptor rather than a filename was given, the underlying file descriptor will be kept open when the file is closed. If a filename is given, ` closefd ` must be ` True ` (the default); otherwise an error will be raised.
+- **opener**: Optional[Callable[[` file `, ` flags `], ` file_descriptor `]] = The underlying file descriptor for the file object is then obtained by calling ` opener ` with (` file, flags `). ` opener ` must return an open file descriptor (passing [` os.open() `](<https://docs.python.org/3/library/os.html#os.open>) as opener results in functionality similar to passing ` None `).
+
+Raises an [auditing event](<https://docs.python.org/3/library/sys.html#auditing>) ` open ` with arguments ` path `, ` mode `, ` flags `.
+
+The ` mode ` and ` flags ` arguments may have been modified or inferred from the original call.
+
+> Source: [` Built-in Functions | open() `](<https://docs.python.org/3/library/functions.html#open>)
