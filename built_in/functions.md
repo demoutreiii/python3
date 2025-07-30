@@ -704,3 +704,20 @@ Raises an [auditing event](<https://docs.python.org/3/library/sys.html#auditing>
 The ` mode ` and ` flags ` arguments may have been modified or inferred from the original call.
 
 > Source: [` Built-in Functions | open() `](<https://docs.python.org/3/library/functions.html#open>)
+
+
+### ord()
+
+Returns an integer representing the unicode code point of the given character. This is the inverse of [` chr() `](<https://docs.python.org/3/library/functions.html#chr>)
+
+**Parameters**:
+- **character**: ` str ` = a string representing one unicode character.
+
+**Returns**: ` int `
+
+```py
+>>> ord("a")
+97
+```
+
+> Source: [` Built-in Functions | ord() `](<https://docs.python.org/3/library/functions.html#ord>)
