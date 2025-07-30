@@ -735,3 +735,17 @@ Returns ` base ` to the power ` exponent `. If ` mod ` is present, returns ` bas
 **Returns**: Union[` int `, ` float `]
 
 > Source: [` Built-in Functions | pow() `](<https://docs.python.org/3/library/functions.html#pow>)
+
+
+### print()
+
+Prints ` objects ` to the text stream ` file `, separated by ` sep ` and followed by ` end `.
+
+**Parameters**:
+- **\*objects**: Optional[Object] = objects that are to convert to strings.
+- **sep**: Optional[` str `] = *kwarg*; string that separates the objects. Defaults to ` " " `. When ` None ` is passed, the default is used.
+- **end**: Optional[` str `] = *kwarg*; string that's used to end the write. Defaults to ` "\n" `. When ` None ` is passed, the default is used.
+- **file**: Optional[Object] = *kwarg*; an object with a ` write(string) ` method; if it is not present or ` None `, [` sys.stdout `](<https://docs.python.org/3/library/sys.html#sys.stdout>) is used.
+- **flush**: Optional[` bool `] = *kwarg*; whether the stream is forcibly flushed. Defaults to ` False `.
+
+> Source: [` Built-in Functions | print() `](https://docs.python.org/3/library/functions.html#print)
