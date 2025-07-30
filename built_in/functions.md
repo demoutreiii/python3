@@ -721,3 +721,17 @@ Returns an integer representing the unicode code point of the given character. T
 ```
 
 > Source: [` Built-in Functions | ord() `](<https://docs.python.org/3/library/functions.html#ord>)
+
+
+### pow()
+
+Returns ` base ` to the power ` exponent `. If ` mod ` is present, returns ` base ` to the power ` exponent `, modulo ` mod `. The two-argument form ` pow(base, exponent) ` is equivalent to using the power operator: ` base ** exponent `.
+
+**Parameters**:
+- **base**: Union[` int `, ` float `]
+- **exponent**: Union[` int `, ` float `]
+- **mod**: Optional[Union[` int `, ` float `]] = optional keyword argument
+
+**Returns**: Union[` int `, ` float `]
+
+> Source: [` Built-in Functions | pow() `](<https://docs.python.org/3/library/functions.html#pow>)
