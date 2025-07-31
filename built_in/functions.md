@@ -841,3 +841,15 @@ Returns a string containing a printable representation of an object. Implements 
 **Returns**: ` str `
 
 > Source: [` Built-in Functions | repr() `](<https://docs.python.org/3/library/functions.html#repr>)
+
+
+### reversed()
+
+Returns a reverse [iterator](<https://docs.python.org/3/glossary.html#term-iterator>). ` seq ` must be an object which has a [` __reversed__() `](<https://docs.python.org/3/reference/datamodel.html#object.__reversed__>) method or supports the sequence protocol.
+
+**Parameters**:
+- **seq**: Object
+
+**Returns**: Sequence
+
+> Source: [` Built-in Functions | reverse() `](<https://docs.python.org/3/library/functions.html#reversed>)
