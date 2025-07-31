@@ -853,3 +853,16 @@ Returns a reverse [iterator](<https://docs.python.org/3/glossary.html#term-itera
 **Returns**: Sequence
 
 > Source: [` Built-in Functions | reverse() `](<https://docs.python.org/3/library/functions.html#reversed>)
+
+
+### round()
+
+Returns ` number ` rounded to ` ndigits ` precision after the decimal point.
+
+**Parameters**:
+- **number**: Union[` int `, ` float `]
+- **ndigits**: Optional[` int `] = if omitted or is ` None `, it returns the nearest integer to its input.
+
+**Returns**: Union[` int `, ` float `]
+
+> Source: [` Built-in Functions | round() `](<https://docs.python.org/3/library/functions.html#round>)
