@@ -829,3 +829,15 @@ Returns a ` Range ` object of sequence of integers.
 ```
 
 > Source: [` Built-in Functions | range() `](<https://docs.python.org/3/library/stdtypes.html#range>)
+
+
+### repr()
+
+Returns a string containing a printable representation of an object. Implements the [` __repr__() `](<https://docs.python.org/3/reference/datamodel.html#object.__repr__>) method.
+
+**Parameters**:
+- **object**: Object
+
+**Returns**: ` str `
+
+> Source: [` Built-in Functions | repr() `](<https://docs.python.org/3/library/functions.html#repr>)
