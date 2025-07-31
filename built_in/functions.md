@@ -749,3 +749,60 @@ Prints ` objects ` to the text stream ` file `, separated by ` sep ` and followe
 - **flush**: Optional[` bool `] = *kwarg*; whether the stream is forcibly flushed. Defaults to ` False `.
 
 > Source: [` Built-in Functions | print() `](https://docs.python.org/3/library/functions.html#print)
+
+
+### property()
+
+Returns a property attribute.
+
+**Attributes**:
+- **\_\_name\_\_**: ` str ` = attribute holding the name of the property.
+
+**Parameters**:
+- **fget**: Optional[Callable[[], Any]] = function for getting an attribute value.
+- **fset**: Optional[Callable[[Any], None]] = function for setting an attribute value.
+- **fdel**: Optional[Callable[[], None]] = function for deleting an attribute value.
+- **doc**: Optional[` str `] = docstring for the attribute, if given. Otherwise, the property will copy ` fget `'s docstring (if it exists).
+
+```py
+class Sample:
+  def __init__(self, value: int) -> None:
+    self.__value: int = value
+
+  def get_value(self) -> int:
+    return self.__value
+
+  def set_value(self, new_value: int) -> None:
+    self.__value: int = new_value
+
+  def delete_value(self) -> None:
+    del self.__value
+
+  value = property(get_value, set_value, delete_value)
+```
+
+#### @property
+#### @getter
+#### @setter
+#### @deleter
+
+```py
+class Sample:
+  def __init__(self, value: int) -> None:
+    self.__value: int = value
+
+  @property
+  def value(self) -> int:
+    return self.__value
+
+
+  @value.setter
+  def value(self, new_value: int) -> None:
+    self.__value: int = new_value
+
+  @value.deleter
+  def value(self) -> None:
+    del self.__value
+```
+
+> Source: [` Built-in Functions | property() `](<https://docs.python.org/3/library/functions.html#property>)
