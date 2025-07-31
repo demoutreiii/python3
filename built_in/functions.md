@@ -806,3 +806,26 @@ class Sample:
 ```
 
 > Source: [` Built-in Functions | property() `](<https://docs.python.org/3/library/functions.html#property>)
+
+
+### range()
+
+Returns a ` Range ` object of sequence of integers.
+
+**Parameters**:
+- **start**: Optional[` int `] = start of the sequence. Defaults to ` 0 `.
+- **end**: ` int ` = end of the sequence.
+- **step**: Optional[` int `] = steps to add per item in the sequence.
+
+**Returns**: Sequence[` int `]
+
+```py
+>>> range(9)
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+>>> range(1, 10)
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> range(0, 11, 2)
+[0, 2, 4, 6, 8, 10]
+```
+
+> Source: [` Built-in Functions | range() `](<https://docs.python.org/3/library/stdtypes.html#range>)
