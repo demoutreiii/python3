@@ -890,3 +890,19 @@ Set an object's attribute's value.
 - **value**: Any
 
 > Source: [` Built-in Functions | setattr() `](<https://docs.python.org/3/library/functions.html#setattr>)
+
+
+### slice()
+
+Returns a [` slice `](<https://docs.python.org/3/glossary.html#term-slice>) object representing the set of indices specified by ` range(start, stop, step) `.
+
+Slice objects are also generated when extended indexing syntax is used, e.g. ` object[start:stop:step] ` or ` objec[start:stop, i] `.
+
+**Parameters**:
+: **start**: Optional[` int `]
+: **stop**: ` int `
+: **step**: Optional[` int `]
+
+**Returns**: [` slice `](<https://docs.python.org/3/glossary.html#term-slice>) object
+
+> Source: [` Built-in Functions | slice() `](<https://docs.python.org/3/library/functions.html#slice>)
