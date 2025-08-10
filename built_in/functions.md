@@ -955,3 +955,21 @@ Slice objects are also generated when extended indexing syntax is used, e.g. ` o
 **Returns**: [` slice `](<https://docs.python.org/3/glossary.html#term-slice>) object
 
 > Source: [` Built-in Functions | slice() `](<https://docs.python.org/3/library/functions.html#slice>)
+
+
+### sorted()
+
+Returns a new sorted list from the items in ` iterable `.
+
+**Parameters**:
+: **iterable**: Iterable
+: **key**: Optional[Callable]
+  : *keyword argument*
+  : a function of one argument that is used to extract a comparison key from each element in ` iterable `. If ` None `, compares the elements directly.
+: **reverse**: ` bool `
+  : *keyword argument*
+  : If set to ` True `, then the list elements are sorted as if each comparison were reversed. Defaults to ` False `.
+
+**Returns**: List[Any]
+
+> Source: [` Built-in Functions | sorted() `](<https://docs.python.org/3/library/functions.html#sorted>)
