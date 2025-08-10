@@ -866,3 +866,15 @@ Returns ` number ` rounded to ` ndigits ` precision after the decimal point.
 **Returns**: Union[` int `, ` float `]
 
 > Source: [` Built-in Functions | round() `](<https://docs.python.org/3/library/functions.html#round>)
+
+
+### set()
+
+Returns a new [` set `](<https://docs.python.org/3/library/stdtypes.html#set>) object, optionally with elements taken from ` iterable `.
+
+**Parameters**:
+- **iterable**: Optional[Iterable]
+
+**Returns**: ` set `
+
+> Source: [` Built-in Functions | set() `](<https://docs.python.org/3/library/stdtypes.html#set>)
