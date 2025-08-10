@@ -878,3 +878,15 @@ Returns a new [` set `](<https://docs.python.org/3/library/stdtypes.html#set>) o
 **Returns**: ` set `
 
 > Source: [` Built-in Functions | set() `](<https://docs.python.org/3/library/stdtypes.html#set>)
+
+
+### setattr()
+
+Set an object's attribute's value.
+
+**Parameters**:
+- **object**: Object
+- **name**: ` str `
+- **value**: Any
+
+> Source: [` Built-in Functions | setattr() `](<https://docs.python.org/3/library/functions.html#setattr>)
