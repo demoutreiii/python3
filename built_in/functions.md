@@ -1103,3 +1103,17 @@ Keyword arguments provided to the three argument form are passed to the appropri
 **Returns**: ` type `
 
 > Source: [` Built-in Functions | type() `](<https://docs.python.org/3/library/functions.html#type>)
+
+
+### vars()
+
+Returns the [` __dict__ `](<https://docs.python.org/3/reference/datamodel.html#object.__dict__>) attribute for a module, class, instance, or any other object with a ` __dict__ ` attribute.
+
+Without an argument, ` vars() ` acts like [` locals() `](https://docs.python.org/3/library/functions.html#locals).
+
+**Parameters**:
+: **object**: Optional[Object]
+
+**Returns**: ` dict `
+
+> Source: [` Built-in Functions | vars() `](<https://docs.python.org/3/library/functions.html#vars>)
