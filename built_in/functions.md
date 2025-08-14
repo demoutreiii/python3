@@ -1117,3 +1117,18 @@ Without an argument, ` vars() ` acts like [` locals() `](https://docs.python.org
 **Returns**: ` dict `
 
 > Source: [` Built-in Functions | vars() `](<https://docs.python.org/3/library/functions.html#vars>)
+
+
+### zip()
+
+Iterates over several iterables in parallel, producing tuples with an item from each one.
+
+**Parameters**:
+: **\*iterables**: Sequence[Iterable]
+: **strict**: Optional[` bool `]
+  : *keyword argument*
+  : Defaults to ` False `.
+
+**Returns**: Iterator
+
+> Source: [` Built-in Functions | zip() `](<https://docs.python.org/3/library/functions.html#zip>)
