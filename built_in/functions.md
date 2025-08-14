@@ -1025,4 +1025,19 @@ Passing a [` bytes `](<https://docs.python.org/3/library/stdtypes.html#bytes>) o
 
 **Returns**: ` str `
 
-> Source [` Built-in Types | str() `](<https://docs.python.org/3/library/stdtypes.html#str>)
+> Source: [` Built-in Types | str() `](<https://docs.python.org/3/library/stdtypes.html#str>)
+
+
+### sum()
+
+Sums ` start ` and the items of an ` iterable ` from left to right and returns the total.
+
+**Parameters**:
+: **iterable**: Iterable
+: **start**: Optional[` int `]
+  : *keyword argument*
+  : Defaults to ` 0 `.
+
+**Returns**: Union[` int `, ` float `]
+
+> Source: [` Built-in Functions | sum() `](<https://docs.python.org/3/library/functions.html#sum>)
