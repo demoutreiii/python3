@@ -8,5 +8,5 @@ A Python3 guidebook
   - [discord.py](<packages/discordpy.md>)
 
 
-> [!INFO]
+> [!NOTE]
 > This is not affiliated with any of the associated documentations.
