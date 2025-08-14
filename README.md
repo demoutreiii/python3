@@ -6,3 +6,7 @@ A Python3 guidebook
 - [Built-in Functions](<built_in/functions.md>)
 - [Packages](<packages>)
   - [discord.py](<packages/discordpy.md>)
+
+
+> [!INFO]
+> This is not affiliated with any of the associated documentations.
