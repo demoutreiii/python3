@@ -4,6 +4,7 @@ Return the absolute value of an integer, floating-point, or an object implementi
 
 
 **Parameters**:
+
 : **x**: Union[` int `, ` float `, Object]
 
   : variable to get the absolute value of.
