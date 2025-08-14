@@ -973,3 +973,30 @@ Returns a new sorted list from the items in ` iterable `.
 **Returns**: List[Any]
 
 > Source: [` Built-in Functions | sorted() `](<https://docs.python.org/3/library/functions.html#sorted>)
+
+
+### staticmethod()
+
+Transforms a method into a static method.
+
+Static methods do not receive an implicit first argument.
+
+**Parameters**:
+: **function**: Callable
+
+```py
+def function() -> Any: ...
+
+class Sample:
+  method = staticmethod(function)
+```
+
+Can also be used as a function decorator.
+
+```py
+class Sample:
+  @staticmethod
+  def method() -> Any: ...
+```
+
+> Source: [` Built-in Functions | staticmethod() `](<https://docs.python.org/3/library/functions.html#staticmethod>)
