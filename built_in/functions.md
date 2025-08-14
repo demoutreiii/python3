@@ -5,9 +5,9 @@ Return the absolute value of an integer, floating-point, or an object implementi
 
 **Parameters**:
 
-: **x**: Union[` int `, ` float `, Object]
+- **x**: Union[` int `, ` float `, Object]
 
-  : variable to get the absolute value of.
+  - variable to get the absolute value of.
 
 
 **Returns**: Union[` int `, ` float `, Any]
@@ -33,9 +33,9 @@ Return an [asynchronous iterator](https://docs.python.org/3/glossary.html#term-a
 
 **Parameters**:
 
-: **async_iterable**: ` AsyncIterable `
+- **async_iterable**: ` AsyncIterable `
 
-  : asynchronous iterable to return its asynchronous iterator of
+  - asynchronous iterable to return its asynchronous iterator of
 
 
 **Returns**: asynchronous iterator
@@ -68,9 +68,9 @@ Return ` True ` if all of the elements in the iterable are true (or if the itera
 
 **Parameters**:
 
-: **iterable**: Iterable
+- **iterable**: Iterable
 
-  : the iterable to check for
+  - the iterable to check for
 
 
 **Returns**: ` bool `
@@ -102,13 +102,13 @@ This calls the [` __anext__() `](https://docs.python.org/3/reference/datamodel.h
 
 **Parameters**:
 
-: **async_iterator**: ` AsyncIterable `
+- **async_iterator**: ` AsyncIterable `
 
-  : asynchronous iterator
+  - asynchronous iterator
 
-: **default**: Optional[Any]
+- **default**: Optional[Any]
 
-  : default value to return if the iterator is exhausted
+  - default value to return if the iterator is exhausted
 
 
 **Returns**: Any
@@ -116,9 +116,9 @@ This calls the [` __anext__() `](https://docs.python.org/3/reference/datamodel.h
 
 **Raises**:
 
-: **StopAsyncIteration**
+- **StopAsyncIteration**
 
-  : iterator is exhausted and ` default ` is not provided
+  - iterator is exhausted and ` default ` is not provided
 
 
 > Added in version 3.10
@@ -135,7 +135,7 @@ Return ` True ` if any element in the ` iterable ` is true. If the iterable is e
 
 **Parameters**:
 
-: **iterable**: Iterable
+- **iterable**: Iterable
 
 
 **Returns**: ` bool `
@@ -165,7 +165,7 @@ As [` repr() `](<https://docs.python.org/3/library/functions.html#repr>), return
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: ` str `
@@ -183,7 +183,7 @@ Convert an integer number to a binary string prefixed with "0b". If ` number ` i
 
 **Parameters**:
 
-: **number**: Union[` int `, Object]
+- **number**: Union[` int `, Object]
 
 
 **Returns**: ` str `
@@ -218,7 +218,7 @@ Return a Boolean value, i.e. one of ` True ` or ` False `. The argument is conve
 
 **Parameters**:
 
-: **object**: Optional[` bool `]
+- **object**: Optional[` bool `]
 
 
 **Returns**: ` bool ` - defaults to ` False `
@@ -254,20 +254,20 @@ Raises an [auditing event](<https://docs.python.org/3/library/sys.html#auditing>
 
 **Parameters**:
 
-: **args**
+- **args**
 
-  : positional arguments
+  - positional arguments
 
-: **kwargs**
+- **kwargs**
 
-  : keyword-arguments
+  - keyword-arguments
 
 
 **Raises**:
 
-: [**RuntimeError**](<https://docs.python.org/3/library/exceptions.html#RuntimeError>)
+- [**RuntimeError**](<https://docs.python.org/3/library/exceptions.html#RuntimeError>)
 
-  : [` sys.breakpointhook() `](<https://docs.python.org/3/library/sys.html#sys.breakpointhook>) is not accessible.
+  - [` sys.breakpointhook() `](<https://docs.python.org/3/library/sys.html#sys.breakpointhook>) is not accessible.
 
 
 > Source: [` Built-in Functions | breakpoint() `](<https://docs.python.org/3/library/functions.html#breakpoint>)
@@ -289,36 +289,36 @@ The optional ` source ` parameter can be used to initialize the array in a few d
 
  - If it is an iterable, it must be an iterable of integers in the range ` 0 <= x < 256 `, which are used as the initial contents of the array.
 
- Without an argument, an array of size 0 is created.
+Without an argument, an array of size 0 is created.
 
 
- **Parameters**:
+**Parameters**:
 
- : **source**: Optional[Union[` str `, ` int `, Object, Iterable]]
+- **source**: Optional[Union[` str `, ` int `, Object, Iterable]]
 
-  : defaults to an array with size of 0
- 
- : **encoding**: Optional
- 
- : **errors**: Optional
+- defaults to an array with size of 0
 
+- **encoding**: Optional
 
- **Returns**: ` bytearray `
+- **errors**: Optional
 
 
- > Source: [` Built-in Functions | bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>)
+**Returns**: ` bytearray `
+
+
+> Source: [` Built-in Functions | bytearray() `](<https://docs.python.org/3/library/stdtypes.html#bytearray>)
 
 
 
- ### callable()
+### callable()
 
 
- Return ` True ` if the ` object ` argument appears callable, ` False ` if not. If this returns ` True `, it is still possible that a call fails, but if it is ` False `, calling ` object ` will never succeed. Note that classes are callable (calling a class returns a new instance); instances are callable if their class has a [` __call__() `](<https://docs.python.org/3/reference/datamodel.html#object.__call__>) method.
+Return ` True ` if the ` object ` argument appears callable, ` False ` if not. If this returns ` True `, it is still possible that a call fails, but if it is ` False `, calling ` object ` will never succeed. Note that classes are callable (calling a class returns a new instance); instances are callable if their class has a [` __call__() `](<https://docs.python.org/3/reference/datamodel.html#object.__call__>) method.
 
 
- **Parameters**:
+**Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: ` bool `
@@ -338,14 +338,14 @@ The valid range for the argument is from 0 through 1,114,111 (0x10FFFF in base 1
 
 **Parameters**:
 
-: **i**: ` int `
+- **i**: ` int `
 
 
 **Raises**:
 
-: [**ValueError**](<https://docs.python.org/3/library/exceptions.html#ValueError>)
+- [**ValueError**](<https://docs.python.org/3/library/exceptions.html#ValueError>)
 
-  : ` i ` is out of range
+  - ` i ` is out of range
 
 
 **Returns**: ` str `- Unicode code point string representation of the integer ` i `
@@ -363,16 +363,16 @@ Convert a single string or number to a complex number, or create a complex numbe
 
 **Parameters**:
 
-: **real**: Union[` float `, ` str` ]
+- **real**: Union[` float `, ` str` ]
 
-: **imag**: Union[` str` ]
+- **imag**: Union[` str` ]
 
 
 **Raises**
 
-: [**ValueError**](<https://docs.python.org/3/library/exceptions.html#ValueError>)
+- [**ValueError**](<https://docs.python.org/3/library/exceptions.html#ValueError>)
 
-  : invalid imaginary parts syntax.
+  - invalid imaginary parts syntax.
 
 
 > Source: [` Built-in Functions | complex() `](<https://docs.python.org/3/library/functions.html#complex>)
@@ -392,11 +392,11 @@ Delete the named attribute of the object, if it allows it.
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
-: **name**: ` str `
+- **name**: ` str `
 
-  : name of the attribute.
+  - name of the attribute.
 
 > Source: [` Built-in Functions | delattr() `](<https://docs.python.org/3/library/functions.html#delattr>)
 
@@ -410,9 +410,9 @@ Create a new dictionary.
 
 **Parameters**:
 
-: **\*\*kwargs**
+- **\*\*kwargs**
 
-  : keyword arguments. Additionally, you may provide a mapping or iterable as well.
+  - keyword arguments. Additionally, you may provide a mapping or iterable as well.
 
 
 **Returns**: ` dict `
@@ -429,7 +429,7 @@ Without arguments, returns the list of names in the current local scope. With an
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: List[` str `]
@@ -454,9 +454,9 @@ Take two (non-complex) numbers as arguments and return a pair of numbers consist
 
 **Parameters**:
 
-: **a**: Union[` int `, ` float `]
+- **a**: Union[` int `, ` float `]
 
-: **b**: Union[` int `, ` float `]
+- **b**: Union[` int `, ` float `]
 
 
 **Returns**: Tuple[Union[` int `, ` float `], Union[` int `, ` float `]]
@@ -481,11 +481,11 @@ Returns an enumerate object; yielding a tuple containing a count (from ` start `
 
 **Parameters**:
 
-: **iterable**: Iterable
+- **iterable**: Iterable
 
-: **start**: ` int `
+- **start**: ` int `
 
-  : start of the count. Defaults to ` 0 `.
+  - start of the count. Defaults to ` 0 `.
 
 
 **Returns**: Tuple[` int `, Object]
@@ -513,11 +513,11 @@ Construct an iterator from those elements of ` iterable ` for which ` function(e
 
 **Parameters**:
 
-: **function**: Union[Callable[Object, ` bool `], ` None `]
+- **function**: Union[Callable[Object, ` bool `], ` None `]
 
-  : If ` None `, the identity function is assumed, that is, all elements of ` iterable ` that are false are removed.
+  - If ` None `, the identity function is assumed, that is, all elements of ` iterable ` that are false are removed.
 
-: **iterable**: Union[Sequence, Container, Iterator]
+- **iterable**: Union[Sequence, Container, Iterator]
 
 
 ```py
@@ -539,7 +539,7 @@ Return a floating-point number constructed from a number or a string. If no argu
 
 **Parameters**:
 
-: **arg**: Optional[Union[` str `, ` int `, ` float `]]
+- **arg**: Optional[Union[` str `, ` int `, ` float `]]
 
 
 **Returns**: ` float `
@@ -568,7 +568,7 @@ Returns a new [` frozenset `](https://docs.python.org/3/library/stdtypes.html#fr
 
 **Parameters**:
 
-: **iterable**: Optional[Iterable]
+- **iterable**: Optional[Iterable]
 
 
 **Returns**: [` frozenset `](https://docs.python.org/3/library/stdtypes.html#frozenset)
@@ -585,17 +585,18 @@ Return the value of the named attribute of ` object `.
 
 ` getattr(x, "foobar") ` is equivalent to ` x.foobar `.
 
+
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
-: **name**: ` str `
+- **name**: ` str `
 
-  : name of the attribute
+  - name of the attribute
 
-: **default**: Optional[Any]
+- **default**: Optional[Any]
 
-  : what is returned if the ` name ` attribute doesn't exist in ` object `. If not provided, [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) is raised.
+  - what is returned if the ` name ` attribute doesn't exist in ` object `. If not provided, [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) is raised.
 
 
 **Returns**: Any
@@ -603,9 +604,9 @@ Return the value of the named attribute of ` object `.
 
 **Raises**:
 
-: [**AttributeError**](https://docs.python.org/3/library/exceptions.html#AttributeError)
+- [**AttributeError**](https://docs.python.org/3/library/exceptions.html#AttributeError)
 
-  : There is no provided ` name ` attribute of the ` object `, and ` default ` is not provided.
+  - There is no provided ` name ` attribute of the ` object `, and ` default ` is not provided.
 
 
 ```py
@@ -640,11 +641,12 @@ Return the dictionary implementing the current module namespace. For code within
 
 Returns ` True ` if the string is the name of one of the object's attributes, otherwise ` False `. This is implemented by calling ` getattr(object, name) ` and seeing whether it raises an [` AttributeError `](https://docs.python.org/3/library/exceptions.html#AttributeError) or not.
 
+
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
-: **name**: ` str `
+- **name**: ` str `
 
 
 ```py
@@ -673,7 +675,7 @@ Returns the hash value of ` object ` (if it has one).
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: Optional[` int `]
@@ -692,12 +694,14 @@ If no argument is given, the interactive help system starts on the interpreter c
 
 This function is added to the built-in namespace by the [` site `](https://docs.python.org/3/library/site.html#module-site) module.
 
+
 **Parameters**:
 
-: **request**: Optional[Union[` str `, Any]]
+- **request**: Optional[Union[` str `, Any]]
 
 
-!!! NOTE **NOTE**: This function is intended for interactive use.
+> [!NOTE]
+> This function is intended for interactive use.
 
 
 > Source: [` Built-in Functions | help() `](<https://docs.python.org/3/library/functions.html#help>)
@@ -709,15 +713,17 @@ This function is added to the built-in namespace by the [` site `](https://docs.
 
 Convert an integer number to a lowercase hexadecimal string prefixed with "0x". If ` x ` is not a Python [` int `](https://docs.python.org/3/library/functions.html#int) object, it has to define an [` __index__() `](https://docs.python.org/3/reference/datamodel.html#object.__index__) that returns an integer.
 
+
 **Parameters**:
 
-: **x**: Union[` int `, Object]
+- **x**: Union[` int `, Object]
 
 
 **Returns**: ` str `
 
 
-!!! NOTE **Note**: To obtain a hexadecimal string representation of a float, use the [` float.hex() `](https://docs.python.org/3/library/stdtypes.html#float.hex) method.
+> [!NOTE]
+> To obtain a hexadecimal string representation of a float, use the [` float.hex() `](<https://docs.python.org/3/library/stdtypes.html#float.hex>) method.
 
 
 > Source: [` Built-in Functions | hex() `](https://docs.python.org/3/library/functions.html#hex)
@@ -735,7 +741,7 @@ Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) 
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: ` int `
@@ -760,7 +766,7 @@ Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) 
 
 **Parameters**:
 
-: **prompt**: ` str `
+- **prompt**: ` str `
 
 
 **Returns**: ` str `
@@ -790,11 +796,11 @@ If the argument is not a number or if ` base ` argument is given, then it must b
 
 **Parameters**:
 
-: **object**: Union[Number, ` str `, ` bytes `, ` bytearray `]
+- **object**: Union[Number, ` str `, ` bytes `, ` bytearray `]
 
-: **base**: Optional[` int `]
+- **base**: Optional[` int `]
 
-  : defaults to ` 10 `
+  - defaults to ` 10 `
 
 
 **Returns**: ` int `
@@ -812,9 +818,9 @@ Returns ` True ` if the ` object ` argument is an instance of the ` classinfo ` 
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
-: **classinfo**: Union[Type, Tuple[Type], Union[Type]]
+- **classinfo**: Union[Type, Tuple[Type], Union[Type]]
 
 
 **Returns**: ` bool `
@@ -834,9 +840,9 @@ A class is considered a subclass of itself.
 
 **Parameters**:
 
-: **class**: Class
+- **class**: Class
 
-: **classinfo**: Union[Class, Tuple[Class], Union[Class]]
+- **classinfo**: Union[Class, Tuple[Class], Union[Class]]
 
 
 **Returns**: ` bool `
@@ -856,7 +862,7 @@ Returns the length (number of items) of an object.
 
 **Parameters**:
 
-: **object**: Union[Sequence, Collection, Object]
+- **object**: Union[Sequence, Collection, Object]
 
 
 **Returns**: ` int `
@@ -874,7 +880,7 @@ Rather than being a function, [` list `](https://docs.python.org/3/library/stdty
 
 **Parameters**:
 
-: **iterable**: Optional[Iterable]
+- **iterable**: Optional[Iterable]
 
 
 **Returns**: List
@@ -904,13 +910,13 @@ For cases where the function inputs are already assigned into argument tuples, s
 
 **Parameters**:
 
-: **function**: Callable
+- **function**: Callable
 
-: **iterable**: Iterable
+- **iterable**: Iterable
 
-: **iterables**: Optional[Iterable]
+- **iterables**: Optional[Iterable]
 
-  : additional iterable arguments
+  - additional iterable arguments
 
 
 **Returns**: Iterable
@@ -930,13 +936,13 @@ If one positional argument is provided, it should be an [iterable](https://docs.
 
 There are two optional keyword-only arguments:
 
-: **key**: Optional[Callable]
+- **key**: Optional[Callable]
 
-  : specifies a one-argument ordering function like that used for [` list.sort() `](https://docs.python.org/3/library/stdtypes.html#list.sort)
+  - specifies a one-argument ordering function like that used for [` list.sort() `](https://docs.python.org/3/library/stdtypes.html#list.sort)
 
-: **default**: Optional[Object]
+- **default**: Optional[Object]
 
-  : specifies an object to return if the provided iterable is empty. If the iterable is empty and ` default ` argument is not provided, [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is raised.
+  - specifies an object to return if the provided iterable is empty. If the iterable is empty and ` default ` argument is not provided, [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is raised.
 
 
 If multiple items are maximal, the function returns the first one encountered.
@@ -957,7 +963,7 @@ Returns a "memory view" object created from the given argument. See [Memory View
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: "Memory view" object
@@ -974,13 +980,13 @@ If one positional argument is provided, it should be an [iterable](https://docs.
 
 There are two optional keyword-only arguments:
 
-: **key**: Optional[Callable]
+- **key**: Optional[Callable]
 
-  : specifies a one-argument ordering function like that used for [` list.sort() `](https://docs.python.org/3/library/stdtypes.html#list.sort).
+  - specifies a one-argument ordering function like that used for [` list.sort() `](https://docs.python.org/3/library/stdtypes.html#list.sort).
 
-: **default**: Optional[Object]
+- **default**: Optional[Object]
 
-  : specifies an object to return if the provided iterable is empty. If the iterable is empty and ` default ` argument is not provided, [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is raised.
+  - specifies an object to return if the provided iterable is empty. If the iterable is empty and ` default ` argument is not provided, [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is raised.
 
 
 If multiple items are minimal, the function returns the first one encountered.
@@ -998,11 +1004,11 @@ Retrieve the next item from the [iterator](https://docs.python.org/3/glossary.ht
 
 **Parameters**:
 
-: **iterator**: Iterator
+- **iterator**: Iterator
 
-: **default**: Optional[Object]
+- **default**: Optional[Object]
 
-  : object to return if the iterator is exhausted, otherwise [` StopIteration `](https://docs.python.org/3/library/exceptions.html#StopIteration) is raised.
+  - object to return if the iterator is exhausted, otherwise [` StopIteration `](https://docs.python.org/3/library/exceptions.html#StopIteration) is raised.
 
 
 **Returns**: Object
@@ -1021,7 +1027,8 @@ This is the ultimate base class of all other classes. It has methods that are co
 **Returns**: Object
 
 
-!!! NOTE **NOTE**: [` object `](https://docs.python.org/3/library/functions.html#object) instances do not have [` __dict__ `](https://docs.python.org/3/reference/datamodel.html#object.__dict__) attributes, so you can't assign arbitrary attributes to an instance of [` object `](https://docs.python.org/3/library/functions.html#object).
+> [!NOTE]
+> [` object `](<https://docs.python.org/3/library/functions.html#object>) instances do not have [` __dict__ `](<https://docs.python.org/3/reference/datamodel.htnl#object.__dict__>) attributes, so you can't assign arbitrary attributes to an instance of ` object `.
 
 
 > Source: [` Built-in Functions | object() `](https://docs.python.org/3/library/functions.html#object)
@@ -1065,37 +1072,37 @@ Valid standard names for decoding/encoding error handling:
 
 **Parameters**
 
-: **file**: ` str `
+- **file**: ` str `
 
   : a [path-like object](<https://docs.python.org/3/glossary.html#term-path-like-object>) giving the pathname (absolute or relative to the current working directory) of the file to be opened or an integer file descriptor of the file to be wrapped. If a file descriptor is given, it is closed when the returned I/O object is closed unless ` closefd ` is set to ` False `.
 
-: **mode**: Optional[` str `]
+- **mode**: Optional[` str `]
 
-  : specifies the mode in which the file is opened. Defaults to ` 'r' `.
+  - specifies the mode in which the file is opened. Defaults to ` 'r' `.
 
-: **buffering**: Optional[` int `]
+- **buffering**: Optional[` int `]
 
-  : optional integer used to set the buffering policy: ` 0 ` to switch buffering off (only allowed in binary mode); ` 1 ` to select line buffering (only usable when writing in text mode); and an integer > 1 to indicate the size in bytes of a fixed-size chunk buffer. Defaults to ` -1 `.
+  - optional integer used to set the buffering policy: ` 0 ` to switch buffering off (only allowed in binary mode); ` 1 ` to select line buffering (only usable when writing in text mode); and an integer > 1 to indicate the size in bytes of a fixed-size chunk buffer. Defaults to ` -1 `.
 
-: **encoding**: Optional[` str `]
+- **encoding**: Optional[` str `]
 
-  : name of the encoding used to decode or encode the file. This should only be used in text mode.
+  - name of the encoding used to decode or encode the file. This should only be used in text mode.
 
-: **errors**: Optional[` str `]
+- **errors**: Optional[` str `]
 
-  : specifies how encoding and decoding errors are to be handled -- this cannot be used in binary mode. Defaults to ` None `.
+  - specifies how encoding and decoding errors are to be handled -- this cannot be used in binary mode. Defaults to ` None `.
 
-: **newline**: Optional[` str `]
+- **newline**: Optional[` str `]
 
-  : determines how to parse newline characters from the stream. It can be ` None `, ` '' `, ` '\n' `, ` '\r' `, and ` '\r\n' `. Defaults to ` None `.
+  - determines how to parse newline characters from the stream. It can be ` None `, ` '' `, ` '\n' `, ` '\r' `, and ` '\r\n' `. Defaults to ` None `.
 
-: **closefd**: Optional[` bool `]
+- **closefd**: Optional[` bool `]
 
-  : If ` False ` and a file descriptor rather than a filename was given, the underlying file descriptor will be kept open when the file is closed. If a filename is given, ` closefd ` must be ` True ` (the default); otherwise an error will be raised.
+  - If ` False ` and a file descriptor rather than a filename was given, the underlying file descriptor will be kept open when the file is closed. If a filename is given, ` closefd ` must be ` True ` (the default); otherwise an error will be raised.
 
-: **opener**: Optional[Callable[[` file `, ` flags `], ` file_descriptor `]]
+- **opener**: Optional[Callable[[` file `, ` flags `], ` file_descriptor `]]
 
-  : The underlying file descriptor for the file object is then obtained by calling ` opener ` with (` file, flags `). ` opener ` must return an open file descriptor (passing [` os.open() `](<https://docs.python.org/3/library/os.html#os.open>) as opener results in functionality similar to passing ` None `).
+  - The underlying file descriptor for the file object is then obtained by calling ` opener ` with (` file, flags `). ` opener ` must return an open file descriptor (passing [` os.open() `](<https://docs.python.org/3/library/os.html#os.open>) as opener results in functionality similar to passing ` None `).
 
 
 Raises an [auditing event](<https://docs.python.org/3/library/sys.html#auditing>) ` open ` with arguments ` path `, ` mode `, ` flags `.
@@ -1116,9 +1123,9 @@ Returns an integer representing the unicode code point of the given character. T
 
 **Parameters**:
 
-: **character**: ` str `
+- **character**: ` str `
 
-  : a string representing one unicode character.
+  - a string representing one unicode character.
 
 
 **Returns**: ` int `
@@ -1142,13 +1149,13 @@ Returns ` base ` to the power ` exponent `. If ` mod ` is present, returns ` bas
 
 **Parameters**:
 
-: **base**: Union[` int `, ` float `]
+- **base**: Union[` int `, ` float `]
 
-: **exponent**: Union[` int `, ` float `]
+- **exponent**: Union[` int `, ` float `]
 
-: **mod**: Optional[Union[` int `, ` float `]]
+- **mod**: Optional[Union[` int `, ` float `]]
 
-  : optional keyword argument
+  - optional keyword argument
 
 
 **Returns**: Union[` int `, ` float `]
@@ -1166,25 +1173,25 @@ Prints ` objects ` to the text stream ` file `, separated by ` sep ` and followe
 
 **Parameters**:
 
-: **\*objects**: Optional[Object]
+- **\*objects**: Optional[Object]
 
-  : objects that are to convert to strings.
+  - objects that are to convert to strings.
   
-: **sep**: Optional[` str `]
+- **sep**: Optional[` str `]
 
-  : *kwarg*; string that separates the objects. Defaults to ` " " `. When ` None ` is passed, the default is used.
+  - *kwarg*; string that separates the objects. Defaults to ` " " `. When ` None ` is passed, the default is used.
 
-: **end**: Optional[` str `]
+- **end**: Optional[` str `]
 
-  : *kwarg*; string that's used to end the write. Defaults to ` "\n" `. When ` None ` is passed, the default is used.
+  - *kwarg*; string that's used to end the write. Defaults to ` "\n" `. When ` None ` is passed, the default is used.
 
-: **file**: Optional[Object]
+- **file**: Optional[Object]
 
-  : *kwarg*; an object with a ` write(string) ` method; if it is not present or ` None `, [` sys.stdout `](<https://docs.python.org/3/library/sys.html#sys.stdout>) is used.
+  - *kwarg*; an object with a ` write(string) ` method; if it is not present or ` None `, [` sys.stdout `](<https://docs.python.org/3/library/sys.html#sys.stdout>) is used.
 
-: **flush**: Optional[` bool `]
+- **flush**: Optional[` bool `]
 
-  : *kwarg*; whether the stream is forcibly flushed. Defaults to ` False `.
+  - *kwarg*; whether the stream is forcibly flushed. Defaults to ` False `.
 
 
 > Source: [` Built-in Functions | print() `](https://docs.python.org/3/library/functions.html#print)
@@ -1199,28 +1206,28 @@ Returns a property attribute.
 
 **Attributes**:
 
-: **\_\_name\_\_**: ` str `
+- **\_\_name\_\_**: ` str `
 
-  : attribute holding the name of the property.
+  - attribute holding the name of the property.
 
 
 **Parameters**:
 
-: **fget**: Optional[Callable[[], Any]]
+- **fget**: Optional[Callable[[], Any]]
 
-  : function for getting an attribute value.
+  - function for getting an attribute value.
 
-: **fset**: Optional[Callable[[Any], None]]
+- **fset**: Optional[Callable[[Any], None]]
 
-  : function for setting an attribute value.
+  - function for setting an attribute value.
 
-: **fdel**: Optional[Callable[[], None]]
+- **fdel**: Optional[Callable[[], None]]
 
-  : function for deleting an attribute value.
+  - function for deleting an attribute value.
 
-: **doc**: Optional[` str `]
+- **doc**: Optional[` str `]
 
-  : docstring for the attribute, if given. Otherwise, the property will copy ` fget `'s docstring (if it exists).
+  - docstring for the attribute, if given. Otherwise, the property will copy ` fget `'s docstring (if it exists).
 
 
 ```py
@@ -1278,17 +1285,17 @@ Returns a ` Range ` object of sequence of integers.
 
 **Parameters**:
 
-: **start**: Optional[` int `]
+- **start**: Optional[` int `]
 
-  : start of the sequence. Defaults to ` 0 `.
+  - start of the sequence. Defaults to ` 0 `.
 
-: **end**: ` int `
+- **end**: ` int `
 
-  : end of the sequence.
+  - end of the sequence.
 
-: **step**: Optional[` int `]
+- **step**: Optional[` int `]
 
-  : steps to add per item in the sequence.
+  - steps to add per item in the sequence.
 
 
 **Returns**: Sequence[` int `]
@@ -1316,7 +1323,7 @@ Returns a string containing a printable representation of an object. Implements 
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: ` str `
@@ -1334,7 +1341,7 @@ Returns a reverse [iterator](<https://docs.python.org/3/glossary.html#term-itera
 
 **Parameters**:
 
-: **seq**: Object
+- **seq**: Object
 
 
 **Returns**: Sequence
@@ -1352,11 +1359,11 @@ Returns ` number ` rounded to ` ndigits ` precision after the decimal point.
 
 **Parameters**:
 
-: **number**: Union[` int `, ` float `]
+- **number**: Union[` int `, ` float `]
 
-: **ndigits**: Optional[` int `]
+- **ndigits**: Optional[` int `]
 
-  : if omitted or is ` None `, it returns the nearest integer to its input.
+  - if omitted or is ` None `, it returns the nearest integer to its input.
 
 
 **Returns**: Union[` int `, ` float `]
@@ -1374,7 +1381,7 @@ Returns a new [` set `](<https://docs.python.org/3/library/stdtypes.html#set>) o
 
 **Parameters**:
 
-: **iterable**: Optional[Iterable]
+- **iterable**: Optional[Iterable]
 
 
 **Returns**: ` set `
@@ -1392,11 +1399,11 @@ Set an object's attribute's value.
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
-: **name**: ` str `
+- **name**: ` str `
 
-: **value**: Any
+- **value**: Any
 
 
 > Source: [` Built-in Functions | setattr() `](<https://docs.python.org/3/library/functions.html#setattr>)
@@ -1413,11 +1420,11 @@ Slice objects are also generated when extended indexing syntax is used, e.g. ` o
 
 **Parameters**:
 
-: **start**: Optional[` int `]
+- **start**: Optional[` int `]
 
-: **stop**: ` int `
+- **stop**: ` int `
 
-: **step**: Optional[` int `]
+- **step**: Optional[` int `]
 
 
 **Returns**: [` slice `](<https://docs.python.org/3/glossary.html#term-slice>) object
@@ -1435,19 +1442,19 @@ Returns a new sorted list from the items in ` iterable `.
 
 **Parameters**:
 
-: **iterable**: Iterable
+- **iterable**: Iterable
 
-: **key**: Optional[Callable]
+- **key**: Optional[Callable]
 
-  : *keyword argument*
+  - *keyword argument*
 
-  : a function of one argument that is used to extract a comparison key from each element in ` iterable `. If ` None `, compares the elements directly.
+  - a function of one argument that is used to extract a comparison key from each element in ` iterable `. If ` None `, compares the elements directly.
 
-: **reverse**: ` bool `
+- **reverse**: ` bool `
 
-  : *keyword argument*
+  - *keyword argument*
 
-  : If set to ` True `, then the list elements are sorted as if each comparison were reversed. Defaults to ` False `.
+  - If set to ` True `, then the list elements are sorted as if each comparison were reversed. Defaults to ` False `.
 
 
 **Returns**: List[Any]
@@ -1467,7 +1474,7 @@ Static methods do not receive an implicit first argument.
 
 **Parameters**:
 
-: **function**: Callable
+- **function**: Callable
 
 
 ```py
@@ -1508,19 +1515,19 @@ Passing a [` bytes `](<https://docs.python.org/3/library/stdtypes.html#bytes>) o
 
 **Parameters**:
 
-: **object**: Union[Object, ` bytes `, ` bytearray `]
+- **object**: Union[Object, ` bytes `, ` bytearray `]
 
-: **encoding**: Optional[` str `]
+- **encoding**: Optional[` str `]
 
-  : *keyword argument*
+  - *keyword argument*
 
-  : Defaults to ` "utf-8" `.
+  - Defaults to ` "utf-8" `.
 
-: **errors**: Optional[` str `]
+- **errors**: Optional[` str `]
 
-  : *keyword argument*
+  - *keyword argument*
 
-  : Defaults to ` "strict" `.
+  - Defaults to ` "strict" `.
 
 
 **Returns**: ` str `
@@ -1538,13 +1545,13 @@ Sums ` start ` and the items of an ` iterable ` from left to right and returns t
 
 **Parameters**:
 
-: **iterable**: Iterable
+- **iterable**: Iterable
 
-: **start**: Optional[` int `]
+- **start**: Optional[` int `]
 
-  : *keyword argument*
+  - *keyword argument*
 
-  : Defaults to ` 0 `.
+  - Defaults to ` 0 `.
 
 
 **Returns**: Union[` int `, ` float `]
@@ -1566,11 +1573,11 @@ When called directly within an ordinary method of a class, both arguments may be
 
 **Parameters**:
 
-: **type**: Optional[Type]
+- **type**: Optional[Type]
 
-: **object_or_type**: Optional[Union[Object, Type]]
+- **object_or_type**: Optional[Union[Object, Type]]
 
-  : Determines the [method resolution order](<https://docs.python.org/3/glossary.html#term-method-resolution-order>) to be searched. The search starts from the class right after the type.
+  - Determines the [method resolution order](<https://docs.python.org/3/glossary.html#term-method-resolution-order>) to be searched. The search starts from the class right after the type.
 
 
 > Source: [` Built-in Functions | super() `](<https://docs.python.org/3/library/functions.html#super>)
@@ -1593,7 +1600,7 @@ Note that it is actually the comma which makes a tuple, not the parentheses. The
 
 **Parameters**:
 
-: **iterable**: Optional[Iterable]
+- **iterable**: Optional[Iterable]
 
 
 **Returns**: ` tuple `
@@ -1611,7 +1618,7 @@ With one argument, returns the type of an object. The return value is a ` type `
 
 **Parameters**:
 
-: **object**: Object
+- **object**: Object
 
 
 **Returns**: ` type `
@@ -1622,17 +1629,17 @@ With three arguments, returns a new ` type ` object. This is essentially a dynam
 
 **Parameters**:
 
-: **name**: ` str `
+- **name**: ` str `
 
-  : name of the class and becomes the [` __name__ `](<https://docs.python.org/3/reference/datamodel.html#type.__name__>) attribute.
+  - name of the class and becomes the [` __name__ `](<https://docs.python.org/3/reference/datamodel.html#type.__name__>) attribute.
 
-: **bases**: tuple[type]
+- **bases**: tuple[type]
 
-  : base classes and becomes the [` __bases__ `](<https://docs.python.org/3/reference/datamodel.html#type.__bases__>) attribute; if empty, [` object `](<https://docs.python.org/3/library/functions.html#object>) is added.
+  - base classes and becomes the [` __bases__ `](<https://docs.python.org/3/reference/datamodel.html#type.__bases__>) attribute; if empty, [` object `](<https://docs.python.org/3/library/functions.html#object>) is added.
 
-: **dict**: dict
+- **dict**: dict
 
-  : contains the attribute and method definitions for the class body; it may be copied or wrapped before becoming the [` __dict__ `](<https://docs.python.org/3/reference/datamodel.html#type.__dict__>) attribute.
+  - contains the attribute and method definitions for the class body; it may be copied or wrapped before becoming the [` __dict__ `](<https://docs.python.org/3/reference/datamodel.html#type.__dict__>) attribute.
 
 
 Keyword arguments provided to the three argument form are passed to the appropriate metaclass machinery (usually [` __init_subclass__() `](<https://docs.python.org/3/reference/datamodel.html#object.__init_subclass__>)) in the same way that keywords in a class definition (besides *metaclass*) would.
@@ -1655,7 +1662,7 @@ Without an argument, ` vars() ` acts like [` locals() `](https://docs.python.org
 
 **Parameters**:
 
-: **object**: Optional[Object]
+- **object**: Optional[Object]
 
 
 **Returns**: ` dict `
@@ -1673,13 +1680,13 @@ Iterates over several iterables in parallel, producing tuples with an item from 
 
 **Parameters**:
 
-: **\*iterables**: Sequence[Iterable]
+- **\*iterables**: Sequence[Iterable]
 
-: **strict**: Optional[` bool `]
+- **strict**: Optional[` bool `]
 
-  : *keyword argument*
+  - *keyword argument*
 
-  : Defaults to ` False `.
+  - Defaults to ` False `.
 
 
 **Returns**: Iterator
@@ -1697,21 +1704,21 @@ Imports the module ` name `, potentially using the given ` globals ` and ` local
 
 **Parameters**:
 
-: **name**: ` str `
+- **name**: ` str `
 
-  : Path-like name of the module
+  - Path-like name of the module
 
-: **globals**: Optional
+- **globals**: Optional
 
-: **locals**: Optional
+- **locals**: Optional
 
-: **fromlist**: Optional[Tuple[` str `]]
+- **fromlist**: Optional[Tuple[` str `]]
 
-  : names of objects or submodules that should be imported from the module given by the ` name `.
+  - names of objects or submodules that should be imported from the module given by the ` name `.
 
-: **level**: Optional[` int `]
+- **level**: Optional[` int `]
 
-  : Specifies whether to use absolute or relative imports. ` 0 ` (default) means only perform absolute imports. Positive values for ` level ` indicate the number of parent directories to search relative to the directory of the module calling ` __import__() `.
+  - Specifies whether to use absolute or relative imports. ` 0 ` (default) means only perform absolute imports. Positive values for ` level ` indicate the number of parent directories to search relative to the directory of the module calling ` __import__() `.
 
 
 **Returns**: module
