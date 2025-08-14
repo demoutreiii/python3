@@ -1057,3 +1057,23 @@ When called directly within an ordinary method of a class, both arguments may be
   : Determines the [method resolution order](<https://docs.python.org/3/glossary.html#term-method-resolution-order>) to be searched. The search starts from the class right after the type.
 
 > Source: [` Built-in Functions | super() `](<https://docs.python.org/3/library/functions.html#super>)
+
+
+### tuple()
+
+Creates a tuple object.
+
+Tuples may be constructed in a number of ways:
+- Using a pair of parentheses to denote the empty tuple: ` () `
+- Using a trailing comma for a singleton tuple: ` a, ` or ` (a,) `
+- Separating items with commas: ` a, b, c ` or ` (a, b, c) `
+- Using the ` tuple() ` built-in: ` tuple() ` or ` tuple(iterable) `
+
+Note that it is actually the comma which makes a tuple, not the parentheses. The parentheses are optional, except in the empty tuple case, or when they are neede to avoid syntactic ambiguity.
+
+**Parameters**:
+: **iterable**: Optional[Iterable]
+
+**Returns**: ` tuple `
+
+> Source: [` Built-in Types | tuple() `](<https://docs.python.org/3/library/stdtypes.html#tuple>)
