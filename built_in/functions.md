@@ -1041,3 +1041,19 @@ Sums ` start ` and the items of an ` iterable ` from left to right and returns t
 **Returns**: Union[` int `, ` float `]
 
 > Source: [` Built-in Functions | sum() `](<https://docs.python.org/3/library/functions.html#sum>)
+
+
+### super()
+
+Returns a proxy object that delegates method calls to a parent or sibling class of ` type `. This is useful for accessing inherited methods that have been overridden in a class.
+
+If the second argument is omitted, the super object returned is unbound. If the second argument is an object, ` isinstance(obj, type) ` must be true. If the second argument is a type, ` issubclass(type2, type) ` must be true.
+
+When called directly within an ordinary method of a class, both arguments may be omitted. In this case, ` type ` will be the enclosing class, and ` obj ` will be the first argument of the immediately enclosing function (typically ` self `).
+
+**Parameters**:
+: **type**: Optional[Type]
+: **object_or_type**: Optional[Union[Object, Type]]
+  : Determines the [method resolution order](<https://docs.python.org/3/glossary.html#term-method-resolution-order>) to be searched. The search starts from the class right after the type.
+
+> Source: [` Built-in Functions | super() `](<https://docs.python.org/3/library/functions.html#super>)
