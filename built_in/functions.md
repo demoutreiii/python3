@@ -1132,3 +1132,22 @@ Iterates over several iterables in parallel, producing tuples with an item from 
 **Returns**: Iterator
 
 > Source: [` Built-in Functions | zip() `](<https://docs.python.org/3/library/functions.html#zip>)
+
+
+### \_\_import\_\_()
+
+Imports the module ` name `, potentially using the given ` globals ` and ` locals ` to determine how to interpret the name in a package context.
+
+**Parameters**:
+: **name**: ` str `
+  : Path-like name of the module
+: **globals**: Optional
+: **locals**: Optional
+: **fromlist**: Optional[Tuple[` str `]]
+  : names of objects or submodules that should be imported from the module given by the ` name `.
+: **level**: Optional[` int `]
+  : Specifies whether to use absolute or relative imports. ` 0 ` (default) means only perform absolute imports. Positive values for ` level ` indicate the number of parent directories to search relative to the directory of the module calling ` __import__() `.
+
+**Returns**: module
+
+> Source: [` Built-in Functions | __import__() `](<https://docs.python.org/3/library/functions.html#import__>)
