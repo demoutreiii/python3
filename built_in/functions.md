@@ -1000,3 +1000,29 @@ class Sample:
 ```
 
 > Source: [` Built-in Functions | staticmethod() `](<https://docs.python.org/3/library/functions.html#staticmethod>)
+
+
+### str()
+
+Returns a [string](<https://docs.python.org/3/library/stdtypes.html#textseq>) version of ` object `.
+
+If ` object ` is not provided, returns the empty string. Otherwise, the behavior of ` str() ` depends on whether ` encoding ` or ` errors ` is given, as follows.
+
+If neither ` encoding ` nor ` errors ` is given, ` str(object) ` returns [` type(object).__str__(object) `](https://docs.python.org/3/reference/datamodel.html#object.__str__). For string objects, this is the string itself. If ` object ` does not have a [` __str__() `](https://docs.python.org/3/reference/datamodel.html#object.__str__) method, then ` str() ` falls back to returning [` repr(object) `](<https://docs.python.org/3/library/functions.html#repr>).
+
+If at least one of ` encoding ` or ` errors ` is given, ` object ` should be a [bytes-like object](<https://docs.python.org/3/glossary.html#term-bytes-like-object>). In this case, if ` object ` is a [` bytes `](<https://docs.python.org/3/library/stdtypes.html#bytes>) object, then ` str(bytes, encoding, errors) ` is equivalent to [` bytes.decode(encoding, errors) `](<https://docs.python.org/3/library/stdtypes.html#bytes.decode>). Otherwise, the bytes object underlying the buffer object is obtained before calling [` bytes.decode() `](<https://docs.python.org/3/library/stdtypes.html#bytes.decode>).
+
+Passing a [` bytes `](<https://docs.python.org/3/library/stdtypes.html#bytes>) object to ` str() ` without the ` encoding ` or ` errors ` arguments falls under the first case of returning the informal string representation.
+
+**Parameters**:
+: **object**: Union[Object, ` bytes `, ` bytearray `]
+: **encoding**: Optional[` str `]
+  : *keyword argument*
+  : Defaults to ` "utf-8" `.
+: **errors**: Optional[` str `]
+  : *keyword argument*
+  : Defaults to ` "strict" `.
+
+**Returns**: ` str `
+
+> Source [` Built-in Types | str() `](<https://docs.python.org/3/library/stdtypes.html#str>)
