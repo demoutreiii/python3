@@ -1077,3 +1077,29 @@ Note that it is actually the comma which makes a tuple, not the parentheses. The
 **Returns**: ` tuple `
 
 > Source: [` Built-in Types | tuple() `](<https://docs.python.org/3/library/stdtypes.html#tuple>)
+
+
+### type()
+
+With one argument, returns the type of an object. The return value is a ` type ` object and generally the same object as returned by [` object.__class__ `](<https://docs.python.org/3/reference/datamodel.html#object.__class__>).
+
+**Parameters**:
+: **object**: Object
+
+**Returns**: ` type `
+
+With three arguments, returns a new ` type ` object. This is essentially a dynamic form of the [` class `](https://docs.python.org/3/reference/compound_stmts.html#class) statement.
+
+**Parameters**:
+: **name**: ` str `
+  : name of the class and becomes the [` __name__ `](<https://docs.python.org/3/reference/datamodel.html#type.__name__>) attribute.
+: **bases**: tuple[type]
+  : base classes and becomes the [` __bases__ `](<https://docs.python.org/3/reference/datamodel.html#type.__bases__>) attribute; if empty, [` object `](<https://docs.python.org/3/library/functions.html#object>) is added.
+: **dict**: dict
+  : contains the attribute and method definitions for the class body; it may be copied or wrapped before becoming the [` __dict__ `](<https://docs.python.org/3/reference/datamodel.html#type.__dict__>) attribute.
+
+Keyword arguments provided to the three argument form are passed to the appropriate metaclass machinery (usually [` __init_subclass__() `](<https://docs.python.org/3/reference/datamodel.html#object.__init_subclass__>)) in the same way that keywords in a class definition (besides *metaclass*) would.
+
+**Returns**: ` type `
+
+> Source: [` Built-in Functions | type() `](<https://docs.python.org/3/library/functions.html#type>)
