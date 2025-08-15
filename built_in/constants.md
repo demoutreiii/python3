@@ -61,3 +61,8 @@ Objects that when printed, print a message like "Use quit() or Ctrl-D (i.e. EOF)
 
 > Source: [` Built-in Constants | exit() `](<https://docs.python.org/3/library/constants.html#exit>)
 > Source: [` Built-in Constants | quit() `](<https://docs.python.org/3/library/constants.html#quit>)
+
+
+### help
+
+Object that when printed, prints the message "Type help() for interactive help, or help(object) for help about object.", and when called, acts as described [elsewhere](<https://docs.python.org/3/library/functions.html#help>).
