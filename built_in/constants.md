@@ -69,7 +69,9 @@ Object that when printed, prints the message "Type help() for interactive help, 
 
 
 ### copyright
+### credits
 
 Objects that when printed or called, print the text of copyright or credits, respectively.
 
 > Source: [` Built-in Constants | copyright `](<https://docs.python.org/3/library/constants.html#copyright>)
+> Source: [` Built-in Constants | credits `](<https://docs.python.org/3/library/constants.html#credits>)
