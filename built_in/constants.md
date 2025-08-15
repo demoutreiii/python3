@@ -1,6 +1,13 @@
 # Built-in Constants
 
 
+## \_\_debug\_\_
+
+This constant is true if Python was not started with an [` -O `](<https://docs.python.org/3/using/cmdline.html#cmdoption-O>) option. See also the [` assert `](<https://docs.python.org/3/reference/simple_stmts.html#assert>) statement.
+
+> Source: [` Built-in Constants | __debug__ `](<https://docs.python.org/3/library/constants.html#debug__>)
+
+
 ## Ellipsis
 
 The same as the ellipsis literal "` ... `". Special value used mostly in conjunction with extended slicing syntax for user-defined container data types. ` Ellipsis ` is the sole instance of the [` types.EllipsisType `](<https://docs.python.org/3/library/types.html#types.EllipsisType>) type.
