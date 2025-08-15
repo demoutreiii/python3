@@ -75,3 +75,10 @@ Objects that when printed or called, print the text of copyright or credits, res
 
 > Source: [` Built-in Constants | copyright `](<https://docs.python.org/3/library/constants.html#copyright>)
 > Source: [` Built-in Constants | credits `](<https://docs.python.org/3/library/constants.html#credits>)
+
+
+### license
+
+Object that when printed, prints the message "Type license() to see the full license text", and when called, displays the full license text in a pager-like fashion (one screen at a time).
+
+> Source: [` Built-in Constants | license `](<https://docs.python.org/3/library/constants.html#license>)
