@@ -15,6 +15,16 @@ An object frequently used to represent the absence of a value, as when default a
 > Source: [` Built-in Constants | None `](<https://docs.python.org/3/library/constants.html#None>)
 
 
+## NotImplemented
+
+A special value which should be returned by the binary special methods to indicate that the operation is not implemented with respect to the other type; may be returned by the in-place binary special methods for the same purpose. It should not be evaluated in a boolean context. ` NotImplemented ` is the sole instance of the [` types.NotImplementedType `](<https://docs.python.org/3/library/types.html#types.NotImplementedType>) type.
+
+> Source: [` Built-in Constants | NotImplemented `](<https://docs.python.org/3/library/constants.html#NotImplemented>)
+
+> [!CAUTION]
+> ` NotImplemented ` and ` NotImplementedError ` are not interchangeable. This constant should only be used as described above; see [` NotImplementedError `](<https://docs.python.org/3/library/exceptions.html#NotImplementedError>) for details on correct usage of the exception.
+
+
 ## True
 
 The true value of the [` bool `](<https://docs.python.org/3/library/functions.html#bool>) type.
