@@ -51,11 +51,13 @@ The true value of the [` bool `](<https://docs.python.org/3/library/functions.ht
 The [` site `](<https://docs.python.org/3/library/site.html#module-site>) module (which is imported automatically during startup, except if the [` -S `](<https://docs.python.org/3/using/cmdline.html#cmdoption-S>) command-line option is given) adds several constants to the built-in namespace. They are useful for the interactive interpreter shell and should not be used in programs.
 
 
+### exit()
 ### quit()
 
 Objects that when printed, print a message like "Use quit() or Ctrl-D (i.e. EOF) to exit", and when called, raise [` SystemExit `](<https://docs.python.org/3/library/exceptions.html#SystemExit>) with the specified exit code.
 
 **Parameters**:
-- **code**: Optional[` int `] - exit code.
+- **code**: Optional[` int `] - exit code. Defaults to ` None `.
 
+> Source: [` Built-in Constants | exit() `](<https://docs.python.org/3/library/constants.html#exit>)
 > Source: [` Built-in Constants | quit() `](<https://docs.python.org/3/library/constants.html#quit>)
