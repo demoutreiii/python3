@@ -1,6 +1,13 @@
 # Built-in Constants
 
 
+## Ellipsis
+
+The same as the ellipsis literal "` ... `". Special value used mostly in conjunction with extended slicing syntax for user-defined container data types. ` Ellipsis ` is the sole instance of the [` types.EllipsisType `](<https://docs.python.org/3/library/types.html#types.EllipsisType>) type.
+
+> Source: [` Built-in Constants | Ellipsis `](<https://docs.python.org/3/library/constants.html#Ellipsis>)
+
+
 ## False
 
 The false value of the [` bool `](<https://docs.python.org/3/library/functions.html#bool>) type.
