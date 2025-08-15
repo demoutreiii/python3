@@ -66,3 +66,10 @@ Objects that when printed, print a message like "Use quit() or Ctrl-D (i.e. EOF)
 ### help
 
 Object that when printed, prints the message "Type help() for interactive help, or help(object) for help about object.", and when called, acts as described [elsewhere](<https://docs.python.org/3/library/functions.html#help>).
+
+
+### copyright
+
+Objects that when printed or called, print the text of copyright or credits, respectively.
+
+> Source: [` Built-in Constants | copyright `](<https://docs.python.org/3/library/constants.html#copyright>)
