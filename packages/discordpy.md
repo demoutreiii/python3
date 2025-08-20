@@ -530,3 +530,16 @@ The components supported by Discord are:
 - [` TextInput `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextInput>)
 
 - [` ThumbnailComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ThumbnailComponent>)
+
+
+## Sending a Message with Components
+
+Components can be sent in a message by passing the ` view ` parameter in [` async Messageable.send() `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Messageable.send>), [` async InteractionResponse.send_message() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.InteractionResponse.send_message>), [` async InteractionResponse.edit_message() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.InteractionResponse.edit_message>), or [` async Webhook.send() `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Webhook.send>). The object passed can either be a [` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>) or [` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) object.
+
+```py
+@tree.command()
+async def sample(interaction: Interaction) -> None:
+  view: View = View()
+  view.add_item(Button(...))
+  await interaction.response.send_message(view = view)
+```
