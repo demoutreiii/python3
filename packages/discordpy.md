@@ -559,3 +559,32 @@ This class only supports the following components:
   - [` UserSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#userselect>)
 
 ` View ` does not support "Components V2" components, you must use [` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) for them.
+
+
+### Adding an Item to the View
+
+There are two ways an item can be added:
+
+[` def View.add_item() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View.add_item>) is called to add an item to the instance. This method takes one argument: the [` Item `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Item>) object to add to the view.
+
+```py
+@tree.command()
+async def sample(interaction: Interaction) -> None:
+  view: View = View()
+  button: Button = Button(...)
+  view.add_item(button)
+  await interaction.response.send_message(view = view)
+```
+
+When a user-defined class is subclassed with ` View `, you can use directly create the components inside the class.
+
+```py
+class SampleView(View):
+  @button(label = "Sample Button")
+  async def button_callback(self, interaction: Interaction, button: Button) -> None:
+    await interaction.response.send_message("You clicked a button!")
+
+  @select(cls = UserSelect)
+  async def select_callback(self, interaction: Interaction, select: UserSelect) -> None:
+    await interaction.response.send_message(f"Hello, {select.values[0].mention}!")
+```
