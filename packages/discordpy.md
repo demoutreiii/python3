@@ -20,6 +20,11 @@
     - [Deferring the response](<#deferring-the-response>)
     - [Sending a modal](<#sending-a-modal>)
   - [Registering Application Commands](<#registering-application-commands>)
+- [Components](<#components>)
+  - [Sending a Message with Components](<#sending-a-message-with-components>)
+  - [View](<#view>)
+    - [Adding an Item to the View](<#adding-an-item-to-the-view>)
+    - [Handling View Timeouts](<#handling-view-timeouts>)
 
 
 # Official Documentation
@@ -587,4 +592,43 @@ class SampleView(View):
   @select(cls = UserSelect)
   async def select_callback(self, interaction: Interaction, select: UserSelect) -> None:
     await interaction.response.send_message(f"Hello, {select.values[0].mention}!")
+```
+
+
+### Handling View Timeouts
+
+` View ` objects have a default timeout of ` 180 ` seconds. This can be modified in the constructor, and a ` None ` can be passed to indicate that there is no timeout.
+
+The timeout resets when a message component interaction is created from the view. Once the timeout exceeds without being explicitly stopped, [` async View.on_timeout() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View.on_timeout>) is called. This method can be overridden to handle view timeouts.
+
+```py
+class SampleView(View):
+  async def on_timeout(self) -> None:
+    self.stop()
+    print("View has timed out.")
+```
+
+The method does not take any arguments. For you to be able to edit the message it belongs to, you must create an instance variable on the view containing the [` InteractionMessage `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.InteractionMessage>) or [` Message `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Message>) object.
+
+```py
+class SampleView(View):
+  def __init__(self) -> None:
+    super().__init__()
+    self._message: Union[InteractionMessage, Message] = ...
+
+  async def on_timeout(self) -> None:
+    self.stop()
+    if self._message not in (Ellipsis, None):
+      await self._message.edit(...)
+
+@tree.command()
+async def sample(interaction: Interaction) -> None:
+  view: View = SampleView()
+  await interaction.response.send_message(view = view)
+  view._message: InteractionMessage = await interaction.original_response()
+
+@bot.command()
+async def sample(ctx: Context) -> None:
+  view: View = SampleView()
+  view._message: Message = await ctx.send(view = view)
 ```
