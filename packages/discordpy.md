@@ -502,3 +502,31 @@ client.tree: CommandTree = CommandTree(client)
 async def sync(ctx: Context) -> None:
   await ctx.tree.sync()
 ```
+
+
+# Components
+
+
+The components supported by Discord are:
+
+- [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ActionRow>)
+
+- [` Button `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Button>)
+
+- [` Container Component `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Container>)
+
+- [` FileComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.FileComponent>)
+
+- [` MediaGalleryComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.MediaGalleryComponent>)
+
+- [` SectionComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SectionComponent>)
+
+- [` SelectMenu `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectMenu>)
+
+- [` SeparatorComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorComponent>)
+
+- [` TextDisplay `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextDisplay>)
+
+- [` TextInput `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextInput>)
+
+- [` ThumbnailComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ThumbnailComponent>)
