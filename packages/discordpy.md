@@ -29,6 +29,7 @@
   - [LayoutView](<#layoutview>)
     - [Adding an Item to the LayoutView](<#adding-an-item-to-the-layoutview>)
     - [Handling LayoutView Timeouts](<#handling-layoutview-timeouts>)
+    - [Setting Persistent LayoutViews](<#setting-persistent-layoutviews>)
 
 
 # Official Documentation
@@ -677,7 +678,7 @@ async def sample(interaction: Interaction) -> None:
 
 ### Handling LayoutView Timeouts
 
-Handling ` LayoutView ` timeouts is similarly done with a ` View `. See how to [handle ` LayoutView ` timeouts](<#handling-view-timeouts>).
+Handling ` LayoutView ` timeouts is similarly done with a ` View `. See how to [handle ` View ` timeouts](<#handling-view-timeouts>).
 
 ```py
 class SampleLayoutView(LayoutView):
@@ -699,4 +700,15 @@ async def slash_command(interaction: Interaction) -> None:
 async def prefix_command(ctx: Context) -> None:
   layout: LayoutView = SampleLayoutView()
   layout._message: Message = await ctx.send(view = layout)
+```
+
+
+### Setting Persistent LayoutViews
+
+Setting "persistent" ` LayoutView `s is similarly done with a ` View `. See how to [set up persistent ` View `](<#setting-persistent-views>)s.
+
+```py
+class SampleLayoutView(LayoutView, timeout = None): ...
+
+bot.add_view(SampleLayoutView())
 ```
