@@ -25,6 +25,7 @@
   - [View](<#view>)
     - [Adding an Item to the View](<#adding-an-item-to-the-view>)
     - [Handling View Timeouts](<#handling-view-timeouts>)
+    - [Setting Persistent Views](<#setting-persistent-views>)
 
 
 # Official Documentation
@@ -632,3 +633,19 @@ async def sample(ctx: Context) -> None:
   view: View = SampleView()
   view._message: Message = await ctx.send(view = view)
 ```
+
+
+### Setting Persistent Views
+
+Your bot loses its views upon process restart when it's not persistent, i.e. it will not receive any message component interaction from non-persistent views.
+
+To set up a persistent view, [` def Bot.add_view() `](<https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.add_view>) is called, and the view instance you want to make "persistent" is passed to the method. Optionally you can pass a Message ID to the method to "refresh" the state of an old view rather than having to send a new one.
+
+```py
+class SampleView(View, timeout = None): ...
+
+bot.add_view(SampleView())
+```
+
+> [!NOTE]
+> For the view to become persistent, [` View.timeout `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View.timeout>) must be set to ` None `.
