@@ -26,6 +26,8 @@
     - [Adding an Item to the View](<#adding-an-item-to-the-view>)
     - [Handling View Timeouts](<#handling-view-timeouts>)
     - [Setting Persistent Views](<#setting-persistent-views>)
+  - [LayoutView](<#layoutview>)
+    - [Adding an Item to the LayoutView](<#adding-an-item-to-the-layoutview>)
 
 
 # Official Documentation
@@ -654,3 +656,19 @@ bot.add_view(SampleView())
 ## LayoutView
 
 [` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) differs from [` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>) in that it supports all component types and uses what Discord refers to as "v2 components".
+
+
+### Adding an Item to the LayoutView
+
+Adding an item to the ` LayoutView ` object is similarly done with a ` View `. See how to [add an item to the ` View `](<#adding-an-item-to-the-view>).
+
+```py
+class SampleLayoutView(LayoutView):
+  container: Container = Container(...)
+
+@tree.command()
+async def sample(interaction: Interaction) -> None:
+  layout: LayoutView = SampleLayoutView()
+  layout.add_item(Container(...))
+  await interaction.response.send_message(view = layout)
+```
