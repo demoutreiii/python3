@@ -28,6 +28,7 @@
     - [Setting Persistent Views](<#setting-persistent-views>)
   - [LayoutView](<#layoutview>)
     - [Adding an Item to the LayoutView](<#adding-an-item-to-the-layoutview>)
+    - [Handling LayoutView Timeouts](<#handling-layoutview-timeouts>)
 
 
 # Official Documentation
@@ -671,4 +672,31 @@ async def sample(interaction: Interaction) -> None:
   layout: LayoutView = SampleLayoutView()
   layout.add_item(Container(...))
   await interaction.response.send_message(view = layout)
+```
+
+
+### Handling LayoutView Timeouts
+
+Handling ` LayoutView ` timeouts is similarly done with a ` View `. See how to [handle ` LayoutView ` timeouts](<#handling-view-timeouts>).
+
+```py
+class SampleLayoutView(LayoutView):
+  def __init__(self) -> None:
+    self._message: Union[InteractionMessage, Message] = ...
+
+  async def on_timeout(self) -> None:
+    self.stop()
+    if self._message not in (Ellipsis, None):
+      await self._message.edit(...)
+
+@tree.command()
+async def slash_command(interaction: Interaction) -> None:
+  layout: LayoutView = SampleLayoutView()
+  await interaction.response.send_message(view = layout)
+  layout._message: InteractionMessage = await interaction.original_response()
+
+@bot.command()
+async def prefix_command(ctx: Context) -> None:
+  layout: LayoutView = SampleLayoutView()
+  layout._message: Message = await ctx.send(view = layout)
 ```
