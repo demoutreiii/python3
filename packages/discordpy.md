@@ -649,3 +649,8 @@ bot.add_view(SampleView())
 
 > [!NOTE]
 > For the view to become persistent, [` View.timeout `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View.timeout>) must be set to ` None `.
+
+
+## LayoutView
+
+[` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) differs from [` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>) in that it supports all component types and uses what Discord refers to as "v2 components".
