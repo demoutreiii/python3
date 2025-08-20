@@ -543,3 +543,19 @@ async def sample(interaction: Interaction) -> None:
   view.add_item(Button(...))
   await interaction.response.send_message(view = view)
 ```
+
+
+## View
+
+[` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>) class is used to create a UI in Discord.
+
+This class only supports the following components:
+
+- [` Button `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Button>)
+- [` Select `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select>)
+  - [` ChannelSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ChannelSelect>)
+  - [` RoleSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.RoleSelect>)
+  - [` MentionableSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#mentionableselect>)
+  - [` UserSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#userselect>)
+
+` View ` does not support "Components V2" components, you must use [` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) for them.
