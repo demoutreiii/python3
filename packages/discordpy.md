@@ -38,6 +38,7 @@
     - [Creating a Select Menu Object](<#creating-a-select-menu-object>)
     - [Options](<#options>)
       - [Adding an Option to a Select Menu](<#adding-an-option-to-a-select-menu>)
+      - [Accessing Selected Options](<#accessing-selected-options>)
     - [Select](<#select>)
     - [ChannelSelect](<#channelselect>)
 
@@ -775,13 +776,12 @@ button.callback: Coroutine[None, [Button, Interaction], None] = callback
 ```py
 from discord import Interaction
 from discord.ui import Button
-from typing import Self
 
 class SampleButton(Button):
-  def __init__(self: Self) -> None:
+  def __init__(self: Button) -> None:
     super().__init__(label = "Click me!")
 
-  async def callback(self: Self, interaction: Interaction) -> None:
+  async def callback(self: Button, interaction: Interaction) -> None:
     await interaction.response.send_message("Button is clicked!")
 ```
 
@@ -792,14 +792,13 @@ The function being decorated should have three parameters, ` self ` representing
 ```py
 from discord import Interaction
 from discord.ui import button, Button, View
-from typing import Self
 
 class SampleView(View):
-  def __init__(self: Self) -> None:
+  def __init__(self: View) -> None:
     super().__init__()
 
   @button(label = "Click me!")
-  async def sample_button(self: Self, interaction: Interaction, button: Button) -> None:
+  async def sample_button(self: View, interaction: Interaction, button: Button) -> None:
     await interaction.response.send_message("Button is clicked!")
 ```
 
@@ -851,13 +850,12 @@ view: View = View().add_item(select)
 ```py
 from discord import Interaction
 from discord.ui import Select, View
-from typing import Self
 
 class SampleSelect(Select):
   def __init__(self: Self) -> None:
     super().__init__(options = [...])
 
-  async def callback(self: Self, interaction: Interaction) -> None:
+  async def callback(self: Select, interaction: Interaction) -> None:
     await interaction.response.send_message(f"You selected: {self.values[0]}")
 
 view: View = View().add_item(SampleSelect())
@@ -891,11 +889,10 @@ view: View = View().add_item(SampleSelect())
 ```py
 from discord import Interaction
 from discord.ui import select, Select, View
-from typing import Self
 
 class SampleView(View):
   @select(options = [...])
-  async def sample_select(self: Self, interaction: Interaction, select: Select) -> None:
+  async def sample_select(self: View, interaction: Interaction, select: Select) -> None:
     await interaction.response.send_message(f"You selected: {select.values[0]}")
 ```
 
@@ -931,12 +928,34 @@ When the [` @select() `](<https://discordpy.readthedocs.io/en/stable/interaction
 ```py
 from discord import Interaction
 from discord.ui import select, Select, View
-from typing import Self
 
 class SampleView(View):
   @select(options = [...])
-  async def sample_select(self: Self, interaction: Interaction, select: Select):
+  async def sample_select(self: View, interaction: Interaction, select: Select) -> None:
     await interaction.response.send_message(f"You selected: {select.values[0]}")
+```
+
+
+#### Accessing Selected Options
+
+The ` values ` property returns a list of strings that corresponds to the [value](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption.value>)s of selected options of the select menu.
+
+```py
+from discord import Interaction, SelectOption
+from discord.ui import Select
+
+class SampleSelect(Select):
+  def __init__(self: Select) -> None:
+    super().__init__(
+      options = [
+        SelectOption(label = "One"),
+        SelectOption(label = "Two"),
+        SelectOption(label = "Three")
+      ]
+    )
+
+  async def callback(self: Select, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"You selected: {self.values[0]}")
 ```
 
 
