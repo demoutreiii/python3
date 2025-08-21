@@ -43,6 +43,7 @@
     - [Select](<#select>)
     - [ChannelSelect](<#channelselect>)
     - [RoleSelect](<#roleselect>)
+    - [MentionableSelect](<#mentionableselect>)
 
 
 # Official Documentation
@@ -1035,6 +1036,26 @@ class SampleSelect(Select):
 - **max_values**: ` int ` - maximum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 1 ` and ` 25 `.
 - **min_values**: ` int ` - minimum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 0 ` and ` 25 `.
 - **placeholder**: Optional[` int `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
+- **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
+  > [!NOTE]
+  > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+
+
+### MentionableSelect
+
+[` MentionableSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.MentionableSelect>) represents a UI select menu with a list of predefined options with the current members and roles in the guild.
+
+> [!NOTE]
+> If sent in a private message, it will only allow the user to select the client or themselves. Every selected option in a private message will resolve to a [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>). It will not give the user any roles to select.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **custom_id**: ` str ` - ID of the select menu that gets received during an interaction. If not given then one is generated for you. Can only be up to 100 characters.
+= **default_values**: Sequence[[` Snowflake `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Snowflake>)] - list of objects representing the users/roles that should be selected by default. If [` Object `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Object>) is passed, then the type must be specified in the constructor. Number of items must be in range of ` min_values ` and ` max_values `.
+- **disabled**: ` bool ` - whether the select is disabled or not. Defaults to ` False `.
+- **id**: Optional[` int `] - ID of the component. Must be unique across the view.
+- **max_vaues**: ` int ` - maximum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 1 ` and ` 25 `.
+- **min_values**: ` int ` - minimum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 0 ` and ` 25 `.
+- **placeholder**: Optional[` str `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
 - **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
   > [!NOTE]
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
