@@ -36,7 +36,8 @@
     - [Button Styles](<#button-styles>)
   - [Select Menus](<#select-menus>)
     - [Creating a Select Menu Object](<#creating-a-select-menu-object>)
-    - [Select Options](<#select-options>)
+    - [Options](<#options>)
+      - [Adding an Option to a Select Menu](<#adding-an-option-to-a-select-menu>)
     - [Select](<#select>)
 
 
@@ -866,10 +867,10 @@ view: View = View().add_item(SampleSelect())
 | Select Type | Resolved Values |
 |-------------|-----------------|
 | [` Select `](<#select>) | list[` str `] |
-| [` UserSelect `](<#user-select>) | list[Union[[` Member `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>), [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>)]] |
-| [` RoleSelect `](<#role-select>) | list[[` Role `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Role>)] |
-| [` MentionableSelect `](<#mentionable-select>) | list[Union[[` Role `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Role>), [` Member `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>), [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>)]] |
-| [` ChannelSelect `](<#channel-select>) | list[Union[[` AppCommandChannel `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommandChannel>), [` AppCommandThread `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommandThread>)]] |
+| [` UserSelect `](<#userselect>) | list[Union[[` Member `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>), [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>)]] |
+| [` RoleSelect `](<#roleselect>) | list[[` Role `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Role>)] |
+| [` MentionableSelect `](<#mentionableselect>) | list[Union[[` Role `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Role>), [` Member `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>), [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>)]] |
+| [` ChannelSelect `](<#channelselect>) | list[Union[[` AppCommandChannel `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommandChannel>), [` AppCommandThread `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommandThread>)]] |
 
 **Parameters**: *(All parameters are keyword-arguments)*
 - **channel_types**: list[[` ChannelType `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.ChannelType>)] - types of channels to show in the select menu. Defaults to all channels. Can only be used with [` ChannelSelect `](<#channel-select>) instances.
@@ -898,7 +899,7 @@ class SampleView(View):
 ```
 
 
-### Select Options
+### Options
 
 [` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>) is used to create an option for a select menu.
 
@@ -906,8 +907,36 @@ class SampleView(View):
 - **label**: ` str ` - label of the option. This is displayed to users. Can only be up to 100 characters.
 - **value**: ` str ` - value of the option. This is not displayed to users. If not provided when constructed then it defaults to the label. Can only be up to 100 characters.
 - **description**: Optional[` str `] - additional description of the option, if any. Can only be up to 100 characters.
-- **emoji**: Optional[Union[[` Emoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Emoji>), [` PartialEmoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.PartialEmoji>), ` str `]] - emoji of the option, if available.
+- **emoji**: Optional[Union[[` Emoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Emoji>), [` PartialEmoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.PartialEmoji>), ` str `]] - emoji of the option, if available. This can either be a string representing the custom or unicode emoji or an instance of [` PartialEmoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.PartialEmoji>) or [` Emoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Emoji>).
 - **default**: ` bool ` - whether this option is selected by default.
+
+
+#### Adding an Option to a Select Menu
+
+> [!NOTE]
+> You are not able to add "custom" options to [` ChannelSelect `](<#channelselect>), [` RoleSelect `](<#roleselect>), [` MentionableSelect `](<#mentionableselect>), and [` UserSelect `](<#userselect>) instances.
+
+To add an option to a [` Select `](<#select>) instance, ` options ` parameter can be passed to the constructor containing a list of [` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>) instances, or via the [` def Select.add_option() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select.add_option>) method (its parameters are similar to that stated in [` SelectOption `](<#select-options>)):
+
+```py
+from discord.ui import Select
+
+sample_select: Select = Select(options = [...])
+sample_select.add_option(...)
+```
+
+When the [` @select() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.select>) decorator is used, the ` options ` parameter is used for appending options.
+
+```py
+from discord import Interaction
+from discord.ui import select, Select, View
+from typing import Self
+
+class SampleView(View):
+  @select(options = [...])
+  async def sample_select(self: Self, interaction: Interaction, select: Select):
+    await interaction.response.send_message(f"You selected: {select.values[0]}")
+```
 
 
 ### Select
