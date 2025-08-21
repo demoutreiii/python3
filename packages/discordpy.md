@@ -721,3 +721,17 @@ bot.add_view(SampleLayoutView())
 - **row**: Optional[` int `] - relative row this button belongs to. Defaults to ` None `, which is automatic ordering. The row number must be between ` 0 ` and ` 4 `.
 - **style**: [` ButtonStyle `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>) - *kwarg*; style of the button. Defaults to [` ButtonStyle.secondary `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.secondary>).
 - **url**: Optional[` str `] - URL this button sends you to.
+
+
+### Button Styles
+
+| Style | Description | Alias |
+|-------|-------------|-------|
+| [` ButtonStyle.primary `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.primary>) | Represents a blurple button for the primary action. | [` ButtonStyle.blurple `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.blurple>) |
+| [` ButtonStyle.secondary `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.secondary>) | Represents a grey button for the secondary action. | [` ButtonStyle.grey `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.grey>), [` ButtonStyle.gray `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.gray>) |
+| [` ButtonStyle.success `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.success>) | Represents a green button for a successful action. | [` ButtonStyle.green `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.green>) |
+| [` ButtonStyle.danger `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.danger>) | Represents a red button for a dangerous action. | [` ButtonStyle.red `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.red>) |
+| [` ButtonStyle.link `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.link>) | Represents a link button. | [` ButtonStyle.url `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.url>)
+| [` ButtonStyle.premium `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.premium>) | Represents a button denoting that buying a SKU is required to perform this action. |  |
+
+[![Discord Button Styles](<https://guide.pycord.dev/assets/images/button-styles-6cde2084662b01fd98801e4444eb89ef.png>)](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>)
