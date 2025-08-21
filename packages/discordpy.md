@@ -36,6 +36,7 @@
     - [Button Styles](<#button-styles>)
   - [Select Menus](<#select-menus>)
     - [Creating a Select Menu Object](<#creating-a-select-menu-object>)
+    - [Select Options](<#select-options>)
     - [Select](<#select>)
 
 
@@ -895,6 +896,18 @@ class SampleView(View):
   async def sample_select(self: Self, interaction: Interaction, select: Select) -> None:
     await interaction.response.send_message(f"You selected: {select.values[0]}")
 ```
+
+
+### Select Options
+
+[` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>) is used to create an option for a select menu.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **label**: ` str ` - label of the option. This is displayed to users. Can only be up to 100 characters.
+- **value**: ` str ` - value of the option. This is not displayed to users. If not provided when constructed then it defaults to the label. Can only be up to 100 characters.
+- **description**: Optional[` str `] - additional description of the option, if any. Can only be up to 100 characters.
+- **emoji**: Optional[Union[[` Emoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Emoji>), [` PartialEmoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.PartialEmoji>), ` str `]] - emoji of the option, if available.
+- **default**: ` bool ` - whether this option is selected by default.
 
 
 ### Select
