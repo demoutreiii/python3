@@ -35,6 +35,7 @@
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
   - [Select Menus](<#select-menus>)
+    - [Creating a Select Menu Object](<#creating-a-select-menu-object>)
     - [Select](<#select>)
 
 
@@ -822,6 +823,78 @@ There are different types of select menus you can create. Select menus are repre
 - [` RoleSelect `](<#role-select>)
 - [` MentionableSelect `](<#mentionable-select>)
 - [` UserSelect `](<#user-select>)
+
+
+### Creating a Select Menu Object
+
+**1. Constructor**
+
+```py
+from collections.abc import Coroutine
+from discord import Interaction, SelectOption
+from discord.ui import Select, View
+
+async def select_callback(self: Select, interaction: Interaction) -> None:
+  await interaction.response.send_message(f"You selected: {self.values[0]}")
+
+options: list[SelectOption] = [...]
+select: Select = Select(options = options)
+select.callback: Coroutine[None, [Select, Interaction], None] = select_callback
+view: View = View().add_item(select)
+```
+
+**2. SubClass**
+
+```py
+from discord import Interaction
+from discord.ui import Select, View
+from typing import Self
+
+class SampleSelect(Select):
+  def __init__(self: Self) -> None:
+    super().__init__(options = [...])
+
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"You selected: {self.values[0]}")
+
+view: View = View().add_item(SampleSelect())
+```
+
+**3. [` discord.ui.select() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.select>) decorator**
+
+| Select Type | Resolved Values |
+|-------------|-----------------|
+| [` Select `](<#select>) | list[` str `] |
+| [` UserSelect `](<#user-select>) | list[Union[[` Member `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>), [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>)]] |
+| [` RoleSelect `](<#role-select>) | list[[` Role `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Role>)] |
+| [` MentionableSelect `](<#mentionable-select>) | list[Union[[` Role `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Role>), [` Member `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>), [` User `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.User>)]] |
+| [` ChannelSelect `](<#channel-select>) | list[Union[[` AppCommandChannel `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommandChannel>), [` AppCommandThread `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.AppCommandThread>)]] |
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **channel_types**: list[[` ChannelType `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.ChannelType>)] - types of channels to show in the select menu. Defaults to all channels. Can only be used with [` ChannelSelect `](<#channel-select>) instances.
+- **cls**: Union[[` Select `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select>), [` UserSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.UserSelect>), [` RoleSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.RoleSelect>), [` MentionableSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.MentionableSelect>), [` ChannelSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ChannelSelect>)] - class to use for the select menu. Defaults to [` SelectMenu `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select>). See the table above for the different values you can get from each select type.
+- **custom_id**: ` str ` - ID of the select menu that gets received during an interaction. It is recommended not to set this parameter to prevent conflicts. Can only be up to 100 characters.
+- **default_values**: Sequence[[` Snwoflake `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Snowflake>)] - list of objects representing the default values for the select menu. Cannot be used with regular [` Select `](<#select>) instances. If ` cls ` is [` MentionableSelect `](<#mentionable-select>) and [` Object `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Object>) is passed, then the type must be specified in the constructor. Number of items must be in range of ` min_values ` and ` max_values `.
+- **disabled**: ` bool ` - whether the select is disabled or not. Defaults to ` False `.
+- **id**: Optional[` int `] - ID of the component. Must be unique across the view.
+- **max_values**: ` int ` - maximum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 1 ` and ` 25 `.
+- **min_values**: ` int ` - minimum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 0 ` and ` 25 `.
+- **options**: list[[` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>)] - list of options that can be selected in this menu. This can only be used with [` Select `](<#select>) instances. Can only contain up to 25 items.
+- **placeholder**: Optional[` str `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
+- **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
+> [!NOTE]
+> This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+
+```py
+from discord import Interaction
+from discord.ui import select, Select, View
+from typing import Self
+
+class SampleView(View):
+  @select(options = [...])
+  async def sample_select(self: Self, interaction: Interaction, select: Select) -> None:
+    await interaction.response.send_message(f"You selected: {select.values[0]}")
+```
 
 
 ### Select
