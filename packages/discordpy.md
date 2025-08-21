@@ -30,6 +30,7 @@
     - [Adding an Item to the LayoutView](<#adding-an-item-to-the-layoutview>)
     - [Handling LayoutView Timeouts](<#handling-layoutview-timeouts>)
     - [Setting Persistent LayoutViews](<#setting-persistent-layoutviews>)
+  - [Button](<#button>)
 
 
 # Official Documentation
@@ -518,27 +519,16 @@ async def sync(ctx: Context) -> None:
 
 
 The components supported by Discord are:
-
 - [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ActionRow>)
-
 - [` Button `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Button>)
-
 - [` Container Component `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Container>)
-
 - [` FileComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.FileComponent>)
-
 - [` MediaGalleryComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.MediaGalleryComponent>)
-
 - [` SectionComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SectionComponent>)
-
 - [` SelectMenu `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectMenu>)
-
 - [` SeparatorComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorComponent>)
-
 - [` TextDisplay `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextDisplay>)
-
 - [` TextInput `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextInput>)
-
 - [` ThumbnailComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ThumbnailComponent>)
 
 
@@ -560,7 +550,6 @@ async def sample(interaction: Interaction) -> None:
 [` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>) class is used to create a UI in Discord.
 
 This class only supports the following components:
-
 - [` Button `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Button>)
 - [` Select `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select>)
   - [` ChannelSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ChannelSelect>)
@@ -569,6 +558,9 @@ This class only supports the following components:
   - [` UserSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#userselect>)
 
 ` View ` does not support "Components V2" components, you must use [` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) for them.
+
+**Parameters**:
+- **timeout**: Optional[` float `] - timeout in seconds from last interaction with the UI before no longer accepting input. If ` None ` then there is no timeout. Defaults to ` 180.0 ` seconds.
 
 
 ### Adding an Item to the View
@@ -659,6 +651,9 @@ bot.add_view(SampleView())
 
 [` LayoutView `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.LayoutView>) differs from [` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>) in that it supports all component types and uses what Discord refers to as "v2 components".
 
+**Parameters**:
+- **timeout**: Optional[` float `] - timeout in seconds from last interaction with the UI before no longer accepting input. If ` None ` then there is no timeout. Defaults to ` 180.0 ` seconds.
+
 
 ### Adding an Item to the LayoutView
 
@@ -712,3 +707,17 @@ class SampleLayoutView(LayoutView, timeout = None): ...
 
 bot.add_view(SampleLayoutView())
 ```
+
+
+## Button
+
+[` Button `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Button>) is used to create a UI button.
+
+**Parameters**:
+- **custom_id**: Optional[` str `] - ID of the button that gets received during an interaction. If this button is for a URL, it does not have a custom ID. Can only be up to 100 characters.
+- **disabled**: ` bool ` - whether the button is disabled or not. Defaults to ` False `.
+- **emoji**: Optional[Union[[` PartialEmoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.PartialEmoji>), [` Emoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Emoji>), ` str `]] - emoji of the button, if available.
+- **label**: Optional[` str `] - label of the button. Can only be up to 80 characters.
+- **row**: Optional[` int `] - relative row this button belongs to. Defaults to ` None `, which is automatic ordering. The row number must be between ` 0 ` and ` 4 `.
+- **style**: [` ButtonStyle `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>) - *kwarg*; style of the button. Defaults to [` ButtonStyle.secondary `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.secondary>).
+- **url**: Optional[` str `] - URL this button sends you to.
