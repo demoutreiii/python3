@@ -22,6 +22,7 @@
   - [Registering Application Commands](<#registering-application-commands>)
 - [Components](<#components>)
   - [Sending a Message with Components](<#sending-a-message-with-components>)
+  - [Editing a Message with New/Updated Components](<#editing-a-message-with-newupdated-components>)
   - [View](<#view>)
     - [Adding an Item to the View](<#adding-an-item-to-the-view>)
     - [Handling View Timeouts](<#handling-view-timeouts>)
@@ -544,6 +545,24 @@ async def sample(interaction: Interaction) -> None:
   view: View = View()
   view.add_item(Button(...))
   await interaction.response.send_message(view = view)
+```
+
+
+## Editing a Message with New/Updated Components
+
+Likewise with [sending a message with components](<#sending-a-message-with-components>), you pass a new ` View ` or ` LayoutView ` object, or the updated "state" of an existing one.
+
+```py
+class SampleButton(Button, label = "Disable Button"):
+  def __init__(self: Self) -> None:
+    super().__init__()
+
+  async def callback(self: Self, interaction: Interaction) -> None:
+    self.disabled: bool = True
+    await interaction.response.edit_message(view = self.view)
+
+view: View = View().add_item(SampleButton())
+await channel.send(view = view)
 ```
 
 
