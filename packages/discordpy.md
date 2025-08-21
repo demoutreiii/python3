@@ -36,6 +36,7 @@
     - [Button Styles](<#button-styles>)
   - [Select Menus](<#select-menus>)
     - [Creating a Select Menu Object](<#creating-a-select-menu-object>)
+    - [Handling Callbacks](<#handling-callbacks>)
     - [Options](<#options>)
       - [Adding an Option to a Select Menu](<#adding-an-option-to-a-select-menu>)
       - [Accessing Selected Options](<#accessing-selected-options>)
@@ -894,6 +895,26 @@ class SampleView(View):
   @select(options = [...])
   async def sample_select(self: View, interaction: Interaction, select: Select) -> None:
     await interaction.response.send_message(f"You selected: {select.values[0]}")
+```
+
+
+### Handling Callbacks
+
+The asynchronous ` callback ` method of a select menu object is overriden, which is called when an interaction is created from the component. This method takes one required positional argument, an [` Interaction `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction>) object.
+
+```py
+class SampleSelect(Select):
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"You selected: {self.values[0]}")
+```
+
+When [` @select() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.select>) decorator is used, the function it's attached to becomes its callback.
+
+```py
+class SampleView(View):
+  @select(...)
+  async def sample_select(self: View, interaction: Interaction, select: Select) -> None:
+    await interaction.response.send_message(f"You selected: {self.values[0]}")
 ```
 
 
