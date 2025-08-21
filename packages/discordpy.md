@@ -1001,6 +1001,15 @@ class SampleSelect(Select):
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
 - **id**: Optional[` int `] - ID of the component. Must be unique across the view.
 
+```py
+class SampleSelect(Select):
+  def __init__(self: Self) -> None:
+    super().__init__(options = [...])
+
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"Selected option: {self.values[0]}")
+```
+
 
 ### ChannelSelect
 
@@ -1022,6 +1031,12 @@ class SampleSelect(Select):
   > [!NOTE]
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
 
+```py
+class SampleSelect(ChannelSelect):
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"Selected channel: {self.values[0]}")
+```
+
 
 ### RoleSelect
 
@@ -1041,6 +1056,12 @@ class SampleSelect(Select):
 - **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
   > [!NOTE]
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+
+```py
+class SampleSelect(RoleSelect):
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"Selected role: {self.values[0]}")
+```
 
 
 ### MentionableSelect
@@ -1062,6 +1083,12 @@ class SampleSelect(Select):
   > [!NOTE]
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
 
+```py
+class SampleSelect(MentionableSelect):
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"Selected mentionable: {self.values[0]}")
+```
+
 
 ### UserSelect
 
@@ -1081,6 +1108,12 @@ class SampleSelect(Select):
 - **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
   > [!NOTE]
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+
+```py
+class SampleSelect(UserSelect):
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"Selected user: {self.values[0]}")
+```
 
 
 ## TextInput
