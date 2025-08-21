@@ -45,6 +45,7 @@
     - [RoleSelect](<#roleselect>)
     - [MentionableSelect](<#mentionableselect>)
     - [UserSelect](<#userselect>)
+  - [TextInput](<#textinput>)
 
 
 # Official Documentation
@@ -1080,3 +1081,22 @@ class SampleSelect(Select):
 - **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
   > [!NOTE]
   > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+
+
+## TextInput
+
+[` TextInput `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.TextInput>) represents a UI text input in a modal.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **custom_id**: ` str ` - ID of the text input that gets received during an interaction. If not given then one is generated for you. Can only be up to 100 characters.
+- **default**: Optional[` str `] - default value of the text input. Can only be up to 4000 characters.
+- **id**: Optional[` int `] - ID of the component. This must be unique across the view.
+- **label**: Optional[` str `] - label to display above the text input. Can only be up to 45 characters.
+  > [!WARNING]
+  > This parameter is deprecated, use [` Label `](<#label>) instead.
+- **max_length**: Optional[` int `] - maximum length of the text input. Must be between ` 1 ` and ` 4000 `.
+- **min_length**: Optional[` int `] - minimum length of the text input. Must be between ` 0 ` and ` 4000 `.
+- **placeholder**: Optional[` str `] - placeholder text to display when the text input is empty. Can only be up to 100 characters.
+- **required**: ` bool ` - whether the text input is required. Defaults to ` True `.
+- **row**: Optional[` int `] - relative row this text input belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
+- **style**: [` TextStyle `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextStyle>) - style of the text input. Defaults to [` TextStyle.short `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextStyle.short>).
