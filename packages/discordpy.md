@@ -39,6 +39,7 @@
     - [Options](<#options>)
       - [Adding an Option to a Select Menu](<#adding-an-option-to-a-select-menu>)
     - [Select](<#select>)
+    - [ChannelSelect](<#channelselect>)
 
 
 # Official Documentation
@@ -746,8 +747,8 @@ bot.add_view(SampleLayoutView())
 - **label**: Optional[` str `] - label of the button. Can only be up to 80 characters.
 - **id**: Optional[` int `] - ID of this component. Must be unique across the view.
 - **row**: Optional[` int `] - relative row this button belongs to. Defaults to ` None `, which is automatic ordering. The row number must be between ` 0 ` and ` 4 `.
-> [!NOTE]
-> This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+  > [!NOTE]
+  > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
 - **sku_id**: Optional[` int `] - SKU ID this button sends you to. Can't be combined with ` url `, ` label `, ` emoji `, nor ` custom_id `.
 - **style**: [` ButtonStyle `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>) - *kwarg*; style of the button. Defaults to [` ButtonStyle.secondary `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.secondary>).
 - **url**: Optional[` str `] - URL this button sends you to.
@@ -884,8 +885,8 @@ view: View = View().add_item(SampleSelect())
 - **options**: list[[` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>)] - list of options that can be selected in this menu. This can only be used with [` Select `](<#select>) instances. Can only contain up to 25 items.
 - **placeholder**: Optional[` str `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
 - **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
-> [!NOTE]
-> This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+  > [!NOTE]
+  > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
 
 ```py
 from discord import Interaction
@@ -916,7 +917,7 @@ class SampleView(View):
 > [!NOTE]
 > You are not able to add "custom" options to [` ChannelSelect `](<#channelselect>), [` RoleSelect `](<#roleselect>), [` MentionableSelect `](<#mentionableselect>), and [` UserSelect `](<#userselect>) instances.
 
-To add an option to a [` Select `](<#select>) instance, ` options ` parameter can be passed to the constructor containing a list of [` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>) instances, or via the [` def Select.add_option() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select.add_option>) method (its parameters are similar to that stated in [` SelectOption `](<#select-options>)):
+To add an option to a [` Select `](<#select>) instance, ` options ` parameter can be passed to the constructor containing a list of [` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>) instances, or via the [` def Select.add_option() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select.add_option>) method (its parameters are similar to that stated in [` SelectOption `](<#options>)):
 
 ```py
 from discord.ui import Select
@@ -952,6 +953,27 @@ class SampleView(View):
 - **placeholder**: Optional[` str `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
 - **required**: ` bool ` - whether the select is required. Only applicable within modals.
 - **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. The row number must be between ` 0 ` and ` 4 `.
-> [!NOTE]
-> This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+  > [!NOTE]
+  > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
 - **id**: Optional[` int `] - ID of the component. Must be unique across the view.
+
+
+### ChannelSelect
+
+[` ChannelSelect `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ChannelSelect>) represents a UI select menu with a list of predefined options with the current channels in the guild.
+
+> [!NOTE]
+> If used in a private message with a user, no channels will be displaye to the user.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **channel_types**: list[[` ChannelType `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.ChannelType>)] - types of channels to show in the select menu. Defaults to all channels.
+- **custom_id**: ` str ` - ID of the select menu that gets received during an interaction. If not given then one is generated for you. Can only be up to 100 characters.
+- **default_values**: Sequence[[` Snowflake `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Snowflake>)] - list of objects representing the channels that should be selected by default. Number of items must be in range of ` min_values ` and ` max_values `.
+- **disabled**: ` bool ` - whether the select is disabled or not. Defaults to ` False `.
+- **id**: Optional[` int `] - ID of the component. Must be unique across the view.
+- **max_values**: ` int ` - maximum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 1 ` and ` 25 `.
+- **min_values**: ` int ` - minimum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 0 ` and ` 25 `.
+- **placeholder**: Optional[` str `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
+- **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
+  > [!NOTE]
+  > This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
