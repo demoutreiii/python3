@@ -34,6 +34,7 @@
   - [Button](<#button>)
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
+  - [Select Menus](<#select-menus>)
 
 
 # Official Documentation
@@ -810,3 +811,13 @@ class SampleView(View):
 | [` ButtonStyle.premium `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.premium>) | Represents a button denoting that buying a SKU is required to perform this action. |  |
 
 [![Discord Button Styles](<https://guide.pycord.dev/assets/images/button-styles-6cde2084662b01fd98801e4444eb89ef.png>)](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>)
+
+
+### Select Menus
+
+There are different types of select menus you can create. Select menus are represented to the user as a dropdown menu.
+- [` Select `](<#select>)
+- [` ChannelSelect `](<#channel-select>)
+- [` RoleSelect `](<#role-select>)
+- [` MentionableSelect `](<#mentionable-select>)
+- [` UserSelect `](<#user-select>)
