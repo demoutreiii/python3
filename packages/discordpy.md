@@ -31,6 +31,8 @@
     - [Handling LayoutView Timeouts](<#handling-layoutview-timeouts>)
     - [Setting Persistent LayoutViews](<#setting-persistent-layoutviews>)
   - [Button](<#button>)
+    - [Creating a Button Object](<#creating-a-button-object>)
+    - [Button Styles](<#button-styles>)
 
 
 # Official Documentation
@@ -718,9 +720,63 @@ bot.add_view(SampleLayoutView())
 - **disabled**: ` bool ` - whether the button is disabled or not. Defaults to ` False `.
 - **emoji**: Optional[Union[[` PartialEmoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.PartialEmoji>), [` Emoji `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Emoji>), ` str `]] - emoji of the button, if available.
 - **label**: Optional[` str `] - label of the button. Can only be up to 80 characters.
+- **id**: Optional[` int `] - ID of this component. Must be unique across the view.
 - **row**: Optional[` int `] - relative row this button belongs to. Defaults to ` None `, which is automatic ordering. The row number must be between ` 0 ` and ` 4 `.
+> [!NOTE]
+> This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+- **sku_id**: Optional[` int `] - SKU ID this button sends you to. Can't be combined with ` url `, ` label `, ` emoji `, nor ` custom_id `.
 - **style**: [` ButtonStyle `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>) - *kwarg*; style of the button. Defaults to [` ButtonStyle.secondary `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle.secondary>).
 - **url**: Optional[` str `] - URL this button sends you to.
+
+
+### Creating a Button Object
+
+**1. Constructor**
+
+```py
+from collections.abc import Coroutine
+from discord import Interaction
+from discord.ui import Button
+
+async def callback(self: Button, interaction: Interaction) -> None:
+  await interaction.response.send_message("Button is clicked!")
+
+button: Button = Button(label = "Click me!")
+button.callback: Coroutine[None, [Button, Interaction], None] = callback
+```
+
+**2. SubClass**
+
+```py
+from discord import Interaction
+from discord.ui import Button
+from typing import Self
+
+class SampleButton(Button):
+  def __init__(self: Self) -> None:
+    super().__init__(label = "Click me!")
+
+  async def callback(self: Self, interaction: Interaction) -> None:
+    await interaction.response.send_message("Button is clicked!")
+```
+
+**3. [` @discord.ui.button() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.button>) decorator**
+
+The function being decorated should have three parameters, ` self ` representing [` View `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View>), the [` Interaction `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction>) you receive, and the [` Button `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Button>) being pressed. Parameters are not interchangeable.
+
+```py
+from discord import Interaction
+from discord.ui import button, Button, View
+from typing import Self
+
+class SampleView(View):
+  def __init__(self: Self) -> None:
+    super().__init__()
+
+  @button(label = "Click me!")
+  async def sample_button(self: Self, interaction: Interaction, button: Button) -> None:
+    await interaction.response.send_message("Button is clicked!")
+```
 
 
 ### Button Styles
