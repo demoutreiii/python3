@@ -35,6 +35,7 @@
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
   - [Select Menus](<#select-menus>)
+    - [Select](<#select>)
 
 
 # Official Documentation
@@ -813,7 +814,7 @@ class SampleView(View):
 [![Discord Button Styles](<https://guide.pycord.dev/assets/images/button-styles-6cde2084662b01fd98801e4444eb89ef.png>)](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ButtonStyle>)
 
 
-### Select Menus
+## Select Menus
 
 There are different types of select menus you can create. Select menus are represented to the user as a dropdown menu.
 - [` Select `](<#select>)
@@ -821,3 +822,21 @@ There are different types of select menus you can create. Select menus are repre
 - [` RoleSelect `](<#role-select>)
 - [` MentionableSelect `](<#mentionable-select>)
 - [` UserSelect `](<#user-select>)
+
+
+### Select
+
+[` Select `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Select>) represents a UI select menu with a list of custom options.
+
+**Parameters**:
+- **custom_id**: ` str ` - ID of the select menu that gets received during an interaction. If not given then one is generated for you. Can only be up to 100 characters.
+- **disabled**: ` bool ` - whether the select is disabled or not. Defaults to ` False `.
+- **max_values**: ` int ` - maximum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 1 ` and ` 25 `.
+- **min_values**: ` int ` - minimum number of items that must be chosen for this select menu. Defaults to ` 1 ` and must be between ` 0 ` an ` 25 `.
+- **options**: list[` SelectOption `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SelectOption>) - list of options that can be selected in this menu. Can only contain up to 25 items.
+- **placeholder**: Optional[` str `] - placeholder text that is shown if nothing is selected, if any. Can only be up to 150 characters.
+- **required**: ` bool ` - whether the select is required. Only applicable within modals.
+- **row**: Optional[` int `] - relative row this select menu belongs to. Defaults to ` None `, which is automatic ordering. The row number must be between ` 0 ` and ` 4 `.
+> [!NOTE]
+> This parameter is ignored when used in an [` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) or v2 component.
+- **id**: Optional[` int `] - ID of the component. Must be unique across the view.
