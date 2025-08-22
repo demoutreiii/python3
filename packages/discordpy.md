@@ -55,6 +55,7 @@
   - [Label](<#label>)
   - [MediaGallery](<#mediagallery>)
     - [MediaGalleryItem](<#mediagalleryitem>)
+  - [Section](<#section>)
 
 
 # Official Documentation
@@ -1297,3 +1298,18 @@ class SampleLayout(LayoutView):
 - **media**: Union[[` UnfurledMediaItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.UnfurledMediaItem>), [` discord.File `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.File>), ` str `] - media item data. This can be a string representing a local file uploaded as an attachment in the message, which can be accessed using the ` attachment://<filename> ` format, or an arbritrary url.
 - **description**: Optional[` str `] - *kwarg*; description to show within this item. Up to 256 characters. Defaults to ` None `.
 - **spoiler**: ` bool ` - *kwarg*; whether this item should be flagged as a spoiler.
+
+
+## Section
+
+[` Section `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Section>) represents a UI section. This is a top-level layout component that can only be used on a [` LayoutView `](<#layoutview>).
+
+**Parameters**:
+- ***children**: Union[[` TextDisplay `](<#textdisplay>), ` str `] - text displays of this section. Up to 3.
+- **accessory**: Union[[` Button `](<#button>), [` Thumbnail `](<#thumbnail>)] - section accessory.
+- **id**: Optional[` int `] - ID of this component. Must be unique across the view.
+
+```py
+class SampleContainer(Container, ...):
+  section: Section = Section("...", Button(...))
+```
