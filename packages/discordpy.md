@@ -50,6 +50,8 @@
     - [MentionableSelect](<#mentionableselect>)
     - [UserSelect](<#userselect>)
   - [TextInput](<#textinput>)
+  - [Container](<#container>)
+  - [File](<#file>)
 
 
 # Official Documentation
@@ -1233,4 +1235,19 @@ class SampleContainer(Container):
 
 layout: LayoutView = LayoutView(...)
 layout.add_item(SampleContainer())
+```
+
+
+## File
+
+[` File `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.File>) represents a UI file component. This is a top-level layout component that can only be used on a [` LayoutView `](<#layoutview>).
+
+**Parameters**:
+- **media**: Union[[` UnfurledMediaItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.UnfurledMediaItem>), [` discord.File `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.File>), ` str `] - this file's media. If this is a string it must point to a local file uploaded within the parent view of this item, and must meet the ` attachment://<filename> ` format.
+- **spoiler**: ` bool ` - *kwarg*; whether to flag this file as a spoiler. Defaults to ` False `.
+- **id**: Optional[` int `] - *kwarg*; ID of this component. Must be unique across the view.
+
+```py
+class SampleLayout(LayoutView):
+  file: File = File('attachment://image.png')
 ```
