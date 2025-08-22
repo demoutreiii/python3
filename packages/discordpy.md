@@ -32,6 +32,7 @@
     - [Handling LayoutView Timeouts](<#handling-layoutview-timeouts>)
     - [Setting Persistent LayoutViews](<#setting-persistent-layoutviews>)
   - [Modal](<#modal>)
+    - [Adding Components to a Modal](<#adding-components-to-a-modal>)
   - [Button](<#button>)
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
@@ -759,6 +760,33 @@ class SampleModal(Modal, title = "Sample Modal"):
   async def on_submit(self: Modal, interaction: Interaction) -> None:
     await interaction.response.send_message(f"Your text: {self.text}")
 ```
+
+
+### Adding Components to a Modal
+
+There are two ways to add components to your modal.
+
+**1. [` def Modal.add_item() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Modal.add_item>) method**
+
+This method takes one positional argument: the [` Item `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Item>) to add to the modal.
+
+```py
+sample_modal: Modal = Modal(...)
+text_input: TextInput = TextInput(...)
+sample_modal.add_item(text_input)
+```
+
+**2. Setting as class variables in a subclassed modal**
+
+```py
+class SampleModal(Modal, ...):
+  text1: TextInput = TextInput(...)
+  text2: TextInput = TextInput(...)
+  text3: TextInput = TextInput(...)
+```
+
+> [!NOTE]
+> Currently you can only have up to 5 components in the modal.
 
 
 ## Button
