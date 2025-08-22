@@ -57,6 +57,7 @@
     - [MediaGalleryItem](<#mediagalleryitem>)
   - [Section](<#section>)
   - [Separator](<#separator>)
+    - [SeparatorSpacing](<#separatorspacing>)
 
 
 # Official Documentation
@@ -1331,3 +1332,12 @@ This is a top-level layout component that can only be used on [` LayoutView `](<
 class SampleContainer(Container):
   separator: Separator = Separator()
 ```
+
+
+### SeparatorSpacing
+
+[` SeparatorSpacing `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorSpacing>) enumerates the separator's size type.
+
+There are currently two separator size types:
+- [` SeparatorSpacing.small `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorSpacing.small>)
+- [` SeparatorSpacing.large `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorSpacing.large>)
