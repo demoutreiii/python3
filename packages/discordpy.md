@@ -1208,3 +1208,29 @@ class SampleSelect(UserSelect):
 - **required**: ` bool ` - whether the text input is required. Defaults to ` True `.
 - **row**: Optional[` int `] - relative row this text input belongs to. Defaults to ` None `, which is automatic ordering. Row number must be between ` 0 ` and ` 4 `.
 - **style**: [` TextStyle `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextStyle>) - style of the text input. Defaults to [` TextStyle.short `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextStyle.short>).
+
+
+## Container
+
+[` Container `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Container>) represents a UI container. This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>) and can contain [` ActionRow `](<#actionrow>)s, [` TextDisplay `](<#textdisplay>)s, [` Section `](<#section>)s, [` MediaGallery `](<#mediagallery>)s, [` File `](<#file>)s, and [` Separator `](<#separator>)s in it.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- ***children**: [` Item `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Item>) - initial children of this container.
+- **accent_colour**: Optional[Union[[` Colour `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Colour>), ` int `]] - colour of the container. Defaults to ` None `.
+- **accent_color**: Optional[Union[[` Colour `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.Colour>), ` int `]] - color of the container. Defaults to ` None `.
+- **spoiler**: ` bool ` - whether to flag this container as a spoiler. Defaults to ` False `.
+- **id**: Optional[` int `] - ID of this component. Must be unique across the view.
+
+
+```py
+class SampleContainer(Container):
+  text_display: TextDisplay = ...
+  action_row: ActionRow = ...
+  section: Section = ...
+  media_gallery: MediaGallery = ...
+  separator: Separator = ...
+  file: File = ...
+
+layout: LayoutView = LayoutView(...)
+layout.add_item(SampleContainer())
+```
