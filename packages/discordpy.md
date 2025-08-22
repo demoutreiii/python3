@@ -52,6 +52,7 @@
   - [TextInput](<#textinput>)
   - [Container](<#container>)
   - [File](<#file>)
+  - [Label](<#label>)
 
 
 # Official Documentation
@@ -1249,5 +1250,22 @@ layout.add_item(SampleContainer())
 
 ```py
 class SampleLayout(LayoutView):
-  file: File = File('attachment://image.png')
+  file: File = File('attachment://text.txt')
+```
+
+
+## Label
+
+[` Label `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Label>) represents a UI label within a modal.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **text**: ` str ` - text to display above the input field. Can only be up to 45 characters.
+- **description**: Optional[` str `] - description text to display right below the label text. Can only be up to 100 characters.
+- **component**: Union[[` TextInput `](<#textinput>), [` Select `](<#select>)] - component to display below the label.
+- **id**: Optional[` int `] - ID of the component. This must be unique across the view.
+
+```py
+class SampleModal(Modal, ...):
+  label1: Label = Label(text = "Hello", component = TextInput(...))
+  label2: Label = ...
 ```
