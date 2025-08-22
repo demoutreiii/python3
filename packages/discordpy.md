@@ -54,6 +54,7 @@
   - [File](<#file>)
   - [Label](<#label>)
   - [MediaGallery](<#mediagallery>)
+    - [MediaGalleryItem](<#mediagalleryitem>)
 
 
 # Official Documentation
@@ -1276,13 +1277,23 @@ class SampleModal(Modal, ...):
 
 [` MediaGallery `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.MediaGallery>) represents a UI media gallery.
 
-Can contain up to 10 [` MediaGalleryItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.MediaGalleryItem>)s. This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>).
+Can contain up to 10 [` MediaGalleryItem `](<#mediagalleryitem>)s. This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>).
 
 **Parameters**:
-- ***items**: [` MediaGalleryItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.MediaGalleryItem>) - initial items of this gallery.
+- ***items**: [` MediaGalleryItem `](<#mediagalleryitem>) - initial items of this gallery.
 - **id**: Optional[` int `] - *kwarg*; ID of this component. Must be unique across the view.
 
 ```py
 class SampleLayout(LayoutView):
   gallery: MediaGallery = ...
 ```
+
+
+### MediaGalleryItem
+
+[` MediaGalleryItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.MediaGalleryItem>) represents a [` MediaGalleryComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.MediaGalleryComponent>) media item.
+
+**Parameters**:
+- **media**: Union[[` UnfurledMediaItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.UnfurledMediaItem>), [` discord.File `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.File>), ` str `] - media item data. This can be a string representing a local file uploaded as an attachment in the message, which can be accessed using the ` attachment://<filename> ` format, or an arbritrary url.
+- **description**: Optional[` str `] - *kwarg*; description to show within this item. Up to 256 characters. Defaults to ` None `.
+- **spoiler**: ` bool ` - *kwarg*; whether this item should be flagged as a spoiler.
