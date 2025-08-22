@@ -31,6 +31,7 @@
     - [Adding an Item to the LayoutView](<#adding-an-item-to-the-layoutview>)
     - [Handling LayoutView Timeouts](<#handling-layoutview-timeouts>)
     - [Setting Persistent LayoutViews](<#setting-persistent-layoutviews>)
+  - [Modal](<#modal>)
   - [Button](<#button>)
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
@@ -739,6 +740,24 @@ Setting "persistent" ` LayoutView `s is similarly done with a ` View `. See how 
 class SampleLayoutView(LayoutView, timeout = None): ...
 
 bot.add_view(SampleLayoutView())
+```
+
+
+## Modal
+
+[` Modal `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Modal>) represents a UI modal. This object must be inherited to create a modal popup window within Discord.
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **custom_id**: ` str ` - ID of the modal that gets received during an interaction. If not given then one is generated for you. Can only be up to 100 characters.
+- **timeout**: Optional[` float `] - timeout in seconds from last interaction with the UI before no longer accepting input. If ` None ` then there is no timeout. Defaults to ` None `.
+- **title**: ` str ` - title of the modal. Can only be up to 45 characters.
+
+```py
+class SampleModal(Modal, title = "Sample Modal"):
+  text: TextInput = TextInput(...)
+
+  async def on_submit(self: Modal, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"Your text: {self.text}")
 ```
 
 
