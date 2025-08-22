@@ -59,6 +59,7 @@
   - [Separator](<#separator>)
     - [SeparatorSpacing](<#separatorspacing>)
   - [TextDisplay](<#textdisplay>)
+  - [Thumbnail](<#thumbnail>)
 
 
 # Official Documentation
@@ -1357,4 +1358,20 @@ This is a top-level layout component that can only be used on [` LayoutView `](<
 ```py
 class SampleContainer(Container):
   text: TextDisplay = TextDisplay("hello world")
+```
+
+
+## Thumbnail
+
+[` Thumbnail `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Thumbnail>) represents a UI thumbnail. This currently can only be used as a [` Section `](<#section>)'s accesory.
+
+**Parameters**:
+- **media**: Union[[` UnfurledMediaItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.UnfurledMediaItem>), [` discord.File `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.File>), ` str `] - media of the thumbnail. This can be a URL or a reference to an attachment that matches the ` attachment://filename.extension ` structure.
+- **description**: Optional[` str `] - *kwarg*; description of this thumbnail. Up to 256 characters. Defaults to ` None `.
+- **spoiler**: ` bool ` - *kwarg*; whether to flag this thumbnail as a spoiler. Defaults to ` False `.
+- **id**: Optional[` int `] - *kwarg*; ID of this component. Must be unique across the view.
+
+```py
+class SampleContainer(Container):
+  section: Section = Section(accessory = Thumbnail(...))
 ```
