@@ -561,6 +561,21 @@ The components supported by Discord are:
 - [` TextInput `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.TextInput>)
 - [` ThumbnailComponent `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ThumbnailComponent>)
 
+```py
+from discord import Interaction, MediaGalleryItem
+from discord.ui import LayoutView, MediaGallery, Section, Separator, TextDisplay, Thumbnail
+
+class SampleLayout(LayoutView):
+  section: Section = Section("This is a section.", accessory = Thumbnail('attachment://image.png'))
+  separator: Separator = Separator()
+  text: TextDisplay = TextDisplay("This is a text display.")
+  gallery: MediaGallery = MediaGallery(MediaGalleryItem('attachment://image.png'))
+
+@tree.command()
+async def slash_command(interaction: Interaction) -> None:
+  await interaction.response.send_message(view = SampleLayout())
+```
+
 
 ## Sending a Message with Components
 
