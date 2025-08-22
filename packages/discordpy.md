@@ -58,6 +58,7 @@
   - [Section](<#section>)
   - [Separator](<#separator>)
     - [SeparatorSpacing](<#separatorspacing>)
+  - [TextDisplay](<#textdisplay>)
 
 
 # Official Documentation
@@ -1341,3 +1342,19 @@ class SampleContainer(Container):
 There are currently two separator size types:
 - [` SeparatorSpacing.small `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorSpacing.small>)
 - [` SeparatorSpacing.large `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.SeparatorSpacing.large>)
+
+
+## TextDisplay
+
+[` TextDisplay `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.TextDisplay>) represents a UI text display.
+
+This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>) or [` Section `](<#section>).
+
+**Parameters**:
+- **content**: ` str ` - content of this text display. Up to 4000 characters.
+- **id**: Optional[` int `] - *kwarg*; ID of this component. Must be unique across the view.
+
+```py
+class SampleContainer(Container):
+  text: TextDisplay = TextDisplay("hello world")
+```
