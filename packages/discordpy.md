@@ -60,6 +60,7 @@
     - [SeparatorSpacing](<#separatorspacing>)
   - [TextDisplay](<#textdisplay>)
   - [Thumbnail](<#thumbnail>)
+  - [ActionRow](<#actionrow>)
 
 
 # Official Documentation
@@ -1374,4 +1375,40 @@ class SampleContainer(Container):
 ```py
 class SampleContainer(Container):
   section: Section = Section(accessory = Thumbnail(...))
+```
+
+
+## ActionRow
+
+[` ActionRow `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.ActionRow>) represents a UI action row.
+
+This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>) and can contain [` Button `](<#button>)s and [` Select `](<#select>)s in it.
+
+Action rows can only have 5 children. This can be inherited.
+
+**Parameters**:
+- ***children**: [` Item `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Item>) - initial children of this action row.
+- **id**: Optional[` int `] - *kwarg*; ID of this component. Must be unique across the view.
+
+```py
+class SampleActionRow(ActionRow):
+  @ui.button(...)
+  async def sample_button(self: ActionRow, interaction: Interaction, button: Button) -> None:
+    await interaction.response.send_message("Button clicked!")
+
+  @ui.select(...)
+  async def sample_select(self: ActionRow, interaction: Interaction, select: Select) -> None:
+    await interaction.response.send_message("Select Menu submitted!")
+
+
+class SampleLayout(LayoutView):
+  row: ActionRow = ...
+
+  @row.button(...)
+  async def sample_button(self: LayoutView, interaction: Interaction, button: Button) -> None:
+    await interaction.response.send_message("Button clicked!")
+
+  @row.select(...)
+  async def sample_select(self: LayoutView, interaction: Interaction, select: Select) -> None:
+    await interaction.response.send_message("Select Menu submitted!")
 ```
