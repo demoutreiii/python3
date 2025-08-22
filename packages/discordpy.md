@@ -53,6 +53,7 @@
   - [Container](<#container>)
   - [File](<#file>)
   - [Label](<#label>)
+  - [MediaGallery](<#mediagallery>)
 
 
 # Official Documentation
@@ -1268,4 +1269,20 @@ class SampleLayout(LayoutView):
 class SampleModal(Modal, ...):
   label1: Label = Label(text = "Hello", component = TextInput(...))
   label2: Label = ...
+```
+
+
+## MediaGallery
+
+[` MediaGallery `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.MediaGallery>) represents a UI media gallery.
+
+Can contain up to 10 [` MediaGalleryItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.MediaGalleryItem>)s. This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>).
+
+**Parameters**:
+- ***items**: [` MediaGalleryItem `](<https://discordpy.readthedocs.io/en/stable/api.html#discord.MediaGalleryItem>) - initial items of this gallery.
+- **id**: Optional[` int `] - *kwarg*; ID of this component. Must be unique across the view.
+
+```py
+class SampleLayout(LayoutView):
+  gallery: MediaGallery = ...
 ```
