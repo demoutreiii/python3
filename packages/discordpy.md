@@ -56,6 +56,7 @@
   - [MediaGallery](<#mediagallery>)
     - [MediaGalleryItem](<#mediagalleryitem>)
   - [Section](<#section>)
+  - [Separator](<#separator>)
 
 
 # Official Documentation
@@ -1312,4 +1313,21 @@ class SampleLayout(LayoutView):
 ```py
 class SampleContainer(Container, ...):
   section: Section = Section("...", Button(...))
+```
+
+
+## Separator
+
+[` Separator `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Separator>) represents a UI separator.
+
+This is a top-level layout component that can only be used on [` LayoutView `](<#layoutview>).
+
+**Parameters**: *(All parameters are keyword-arguments)*
+- **visible**: ` bool ` - whether this separator is visible. On the client side this is whether a divider line should be shown or not.
+- **spacing**: [` SeparatorSpacing `](<#separatorspacing>) - spacing of this separator.
+- **id**: Optional[` int `] - ID of this component. Must be unique across the view.
+
+```py
+class SampleContainer(Container):
+  separator: Separator = Separator()
 ```
