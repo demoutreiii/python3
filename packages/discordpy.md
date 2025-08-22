@@ -33,6 +33,7 @@
     - [Setting Persistent LayoutViews](<#setting-persistent-layoutviews>)
   - [Modal](<#modal>)
     - [Adding Components to a Modal](<#adding-components-to-a-modal>)
+    - [Handling Modal Submissions](<#handling-modal-submissions>)
   - [Button](<#button>)
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
@@ -787,6 +788,17 @@ class SampleModal(Modal, ...):
 
 > [!NOTE]
 > Currently you can only have up to 5 components in the modal.
+
+
+### Handling Modal Submissions
+
+When a modal is submitted by the user, i.e. clicking on the "Submit" button, the [` async Modal.on_submit() `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Modal.on_submit>) method is called. This method should be overriden, and takes two positional arguments: the [` Modal `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.Modal>) itself, and the [` Interaction `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction>) that you receive.
+
+```py
+class SampleModal(Modal, ...):
+  async def on_submit(self: Modal, interaction: Interaction) -> None:
+    await interaction.response.send_message("Modal submitted!")
+```
 
 
 ## Button
