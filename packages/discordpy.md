@@ -34,6 +34,7 @@
   - [Modal](<#modal>)
     - [Adding Components to a Modal](<#adding-components-to-a-modal>)
     - [Handling Modal Submissions](<#handling-modal-submissions>)
+    - [Accessing Value of TextInputs](<#accessing-value-of-textinputs>)
   - [Button](<#button>)
     - [Creating a Button Object](<#creating-a-button-object>)
     - [Button Styles](<#button-styles>)
@@ -798,6 +799,21 @@ When a modal is submitted by the user, i.e. clicking on the "Submit" button, the
 class SampleModal(Modal, ...):
   async def on_submit(self: Modal, interaction: Interaction) -> None:
     await interaction.response.send_message("Modal submitted!")
+```
+
+
+### Accessing Value of TextInputs
+
+If subclassed, you can access the user's input value of a particular ` TextInput ` component via the class variable it's stored in, and the [` TextInput.value `](<https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.TextInput.value>) is accessed/referenced.
+
+```py
+class SampleModal(Modal, ...):
+  text: TextInput = ...
+
+  async def on_submit(self: Modal, interaction: Interaction) -> None:
+    await interaction.response.send_message(f"You typed: {self.text.value}")
+    # or
+    await interaction.response.send_message(f"You typed: {self.text}")
 ```
 
 
